@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  商品登録確認
+{% endblock %}
+{% block mtitle %}
+  商品登録確認画面
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="container mt-5">
+        <div class="display-6 text-info mb-2 text-center">以下の商品を登録します</div>
+        {% include 'goodsapp/goodstable.html' with data=request.session.igoods_data %}
+      </div>
+      <form method="post" action="{% url 'goods_ico' %}">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+          <input type="submit" class="btn btn-primary" value="確定" />
+          <a class="btn btn-secondary ms-3" href="{% url 'goods_in' %}">登録画面に戻る</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

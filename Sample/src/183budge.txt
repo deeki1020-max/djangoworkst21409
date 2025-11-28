@@ -1,0 +1,17 @@
+<button type="button" class="btn btn-primary mt-2 mb-2">
+	ボタン <span class="badge text-bg-dark">カウンター</span>
+</button>
+<button type="button" class="btn btn-success position-relative">
+	ボタン
+	<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+	カウンター
+	<span class="visually-hidden">unread messages</span>
+	</span>
+</button>
+<button type="button" class="btn btn-primary position-relative ms-5">
+	Profile
+	<span
+	class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+	<span class="visually-hidden">New alerts</span>
+	</span>
+</button>

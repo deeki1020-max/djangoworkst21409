@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  社員登録完了
+{% endblock %}
+{% block mtitle %}
+  社員登録完了画面
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="container mt-5">
+        <div class="display-6 text-info mb-2 text-center">商品登録を完了しました</div>
+        {% comment %}TODO 例題7 ここにstafftable.htmlの内容を埋め込み処理{% endcomment %}
+        {% include 'staffapp/stafftable.html' with data=request.session.istaff_data %}
+        <div class="d-flex justify-content-center">
+          <a name="back" class="link-info link-opacity-50-hover ms-5" href="{% url 'staff_menu' %}">メニューに戻る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

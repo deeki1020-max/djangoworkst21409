@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  メインメニュー
+{% endblock %}
+{% block mtitle %}
+  メインメニュー
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-md-3 text-center">
+        <a class="btn btn-outline-primary btn-lg w-100" href="{% url 'staff_menu' %}">社員管理ページ</a>
+      </div>
+      <div class="col-md-6">
+        <p class="text-center text-primary mt-1">社員管理ページに遷移します。ここでは、社員情報の登録・変更・削除ができます。</p>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-md-3 text-center">
+        <a href="{% url 'buyer_menu' %}" class="btn btn-outline-success btn-lg w-100">仕入先管理ページ</a>
+      </div>
+      <div class="col-md-6">
+        <p class="text-center text-success mt-1">仕入先管理ページに遷移します。ここでは、仕入先情報の登録・変更・削除ができます。</p>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-md-3 text-center">
+        <a href="{% url 'customer_menu' %}" class="btn btn-outline-warning btn-lg w-100">得意先管理ページ</a>
+      </div>
+      <div class="col-md-6">
+        <p class="text-center text-warning mt-1">得意先管理ページに遷移します。ここでは、得意先情報の登録・変更・削除ができます。</p>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-md-3 text-center">
+        <a href="{% url 'goods_menu' %}" class="btn btn-outline-danger btn-lg w-100">商品管理ページ</a>
+      </div>
+      <div class="col-md-6">
+        <p class="text-center text-danger mt-1">商品管理ページに遷移します。ここでは、商品情報の登録・変更・削除ができます。</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  仕入先情報登録
+{% endblock %}
+
+{% block mtitle %}
+  仕入先情報登録
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <form action="{% url 'buyer_in' %}" method="post" class="col-md-8 col-lg-6">
+        {% csrf_token %}
+        <table class="table table-bordered">{{ form.as_table }}</table>
+        <div class="d-flex justify-content-center">
+          <input type="submit" value="登録" class="btn btn-primary" />
+          <a class="btn btn-secondary ms-3" href="{% url 'buyer_menu' %}">メニューに戻る</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

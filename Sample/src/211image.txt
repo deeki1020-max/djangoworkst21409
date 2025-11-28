@@ -1,0 +1,8 @@
+<div class="d-flex">
+	<label class="col-1 me-1 text-end" for="exampleimg">ボーダー</label>
+	<img src="img/garden.jpg" class="w-25 img-thumbnail" alt="flower" id="exampleimg" />
+	<label class="col-1 text-end me-1" for="exampleimg2">角丸</label>
+	<img src="img/forest.jpg" class="w-25 rounded" alt="forest" id="exampleimg2" />
+	<label class="col-1 text-end me-1" for="exampleimg3">丸</label>
+	<img src="img/penguins.jpg" class="w-25 rounded-circle" alt="penguin" id="exampleimg3" />
+</div>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8" />
+	<title>フォームサンプル</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.css" rel="stylesheet"
+		crossorigin="anonymous" />
+</head>
+
+<body>
+	<form action="index.html" method="POST">
+		<table>
+			<tr>
+				<th>No</th>
+				<th>type属性</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>①</td>
+				<td>text</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td>②</td>
+				<td>number</td>
+				<td><input type="number" name="number" /></td>
+			</tr>
+			<tr>
+				<td>③</td>
+				<td>password</td>
+				<td><input type="password" maxlength="8" name="password" /></td>
+			</tr>
+			<tr>
+				<td>④</td>
+				<td>tel</td>
+				<td>
+					<input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="090-1234-5678" name="tel" />
+				</td>
+			</tr>
+			<tr>
+				<td>⑤</td>
+				<td>email</td>
+				<td>
+					<input type="email" placeholder="info@sample.com" name="email" />
+				</td>
+			</tr>
+			<tr>
+				<td>⑥</td>
+				<td>url</td>
+				<td><input type="url" name="url" /></td>
+			</tr>
+			<tr>
+				<td>⑦</td>
+				<td>search</td>
+				<td>
+					<input type="search" autocomplete="on" list="list" name="search" />
+					<datalist id="list">
+						<!-- 候補を表示 -->
+						<option value="html"></option>
+						<option value="css"></option>
+						<option value="javascript"></option>
+						<option value="webデザイン入門"></option>
+					</datalist>
+				</td>
+			</tr>
+			<tr>
+				<td>⑧</td>
+				<td>radio</td>
+				<td>
+					<input type="radio" name="radio" value="Good" />Good
+					<input type="radio" name="radio" value="Bad" />Bad
+				</td>
+			</tr>
+			<tr>
+				<td>⑨</td>
+				<td>checkbox</td>
+				<td>
+					<input type="checkbox" name="check" value="Apple" />りんご
+					<input type="checkbox" name="check" value="Orange" />オレンジ
+					<input type="checkbox" name="check" value="Banana" />バナナ
+				</td>
+			</tr>
+			<tr>
+				<td>⑩</td>
+				<td>hidden</td>
+				<td><input type="hidden" name="hidden" value="隠されたデータ" /></td>
+			</tr>
+			<tr>
+				<td>⑪</td>
+				<td>file</td>
+				<td>
+					<input type="file" accept="image/png, image/jpeg" name="file" />
+				</td>
+			</tr>
+			<tr>
+				<td>⑫</td>
+				<td>color</td>
+				<td><input type="color" name="color" /></td>
+			</tr>
+			<tr>
+				<td>⑬</td>
+				<td>range</td>
+				<td><input type="range" min="0" max="100" name="range" /></td>
+			</tr>
+			<tr>
+				<td>⑭</td>
+				<td>date</td>
+				<td><input type="date" name="date" /></td>
+			</tr>
+			<tr>
+				<td>⑮</td>
+				<td>datetime-local</td>
+				<td><input type="datetime-local" name="datetime-local" /></td>
+			</tr>
+			<tr>
+				<td>⑯</td>
+				<td>month</td>
+				<td><input type="month" name="month" /></td>
+			</tr>
+			<tr>
+				<td>⑰</td>
+				<td>week</td>
+				<td><input type="week" name="week" /></td>
+			</tr>
+			<tr>
+				<td>⑱</td>
+				<td>time</td>
+				<td><input type="time" name="time" /></td>
+			</tr>
+			<tr>
+				<td>⑲</td>
+				<td>submit</td>
+				<td><input type="submit" value="送信" /></td>
+			</tr>
+			<tr>
+				<td>⑳</td>
+				<td>reset</td>
+				<td><input type="reset" value="リセットする" /></td>
+			</tr>
+			<tr>
+				<td>㉑</td>
+				<td>button</td>
+				<td><input type="button" value="ボタン" /></td>
+			</tr>
+			<tr>
+				<td>㉒</td>
+				<td>image</td>
+				<td>
+					<input type="image" src="./img/icon.svg" alt="クリックで送信" width="20%" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

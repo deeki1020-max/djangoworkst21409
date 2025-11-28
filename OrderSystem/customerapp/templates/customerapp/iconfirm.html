@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  得意先登録確認
+{% endblock %}
+{% block mtitle %}
+  得意先登録確認
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h4 class="mb-4">以下の内容で登録します</h4>
+        <table class="table table-bordered">
+          <tr>
+            <th class="w-25 table-light">得意先コード</th>
+            <td>{{ data.cust_code }}</td>
+          </tr>
+          <tr>
+            <th class="table-light">得意先名</th>
+            <td>{{ data.cust_name }}</td>
+          </tr>
+          <tr>
+            <th class="table-light">担当者コード</th>
+            <td>{{ data.staff_code }}</td>
+          </tr>
+        </table>
+        <form method="post" action="{% url 'customer_ico' %}" class="mt-4">
+          {% csrf_token %}
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">確定</button>
+            <a class="btn btn-secondary ms-3" href="{% url 'customer_in' %}">登録画面に戻る</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

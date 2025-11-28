@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  社員登録
+{% endblock %}
+{% block mtitle %}
+  社員登録画面
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="mb-4">社員登録</h2>
+        <form method="post">
+          {% csrf_token %}
+
+          {# views.pyから渡されたフォームの各入力欄を自動で表示 #}
+          {{ form.as_p }}
+
+          <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-primary">確認画面へ</button>
+            <a href="{% url 'staff_menu' %}" class="btn btn-secondary ms-3">戻る</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

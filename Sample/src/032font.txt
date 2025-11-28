@@ -1,0 +1,12 @@
+<div class="display-6 text-primary">text-primary</div>
+<div class="display-6 text-secondary">text-secondary</div>
+<div class="display-6 text-success">text-success</div>
+<div class="display-6 text-danger">text-danger</div>
+<div class="display-6 text-warning">text-warning</div>
+<div class="display-6 text-info">text-info</div>
+<div class="fs-2 text-primary-emphasis">text-primary-emphasis</div>
+<div class="fs-2 text-secondary-emphasis">text-secondary-emphasis</div>
+<div class="fs-2 text-success-emphasis">text-success-emphasis</div>
+<div class="fs-2 text-danger-emphasis">text-danger-emphasis</div>
+<div class="fs-2 text-warning-emphasis">text-warning-emphasis</div>
+<div class="fs-2 text-info-emphasis">text-info-emphasis</div>

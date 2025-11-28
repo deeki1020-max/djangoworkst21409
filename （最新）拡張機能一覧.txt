@@ -1,0 +1,270 @@
+## 使用拡張機能一覧（Visual Studio Code）
+
+この Django 用ワークスペースでは、以下の拡張機能を使用して開発環境を構築しています。
+※拡張機能の詳細（名前・ID・バージョンなど）は VSCode からコピーしてそのまま貼り替え可能です。
+
+### ① タグを</ まで入力すると閉じタグ表示
+名前: Auto Close Tag
+ID: formulahendry.auto-close-tag
+説明: Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text
+パブリッシャー: Jun Han
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag
+
+### ② タグ名変更（閉じタグも一緒に）
+名前: Auto Rename Tag
+ID: formulahendry.auto-rename-tag
+説明: Auto rename paired HTML/XML tag
+パブリッシャー: Jun Han
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
+
+### ③ コメントの色付け
+名前: Better Comments
+ID: aaron-bond.better-comments
+説明: Improve your code commenting by annotating with alert, informational, TODOs, and more!
+パブリッシャー: Aaron Bond
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
+
+### ④ BootStrap用
+名前: Bootstrap IntelliSense
+ID: hossaini.bootstrap-intellisense
+説明: Enhance Bootstrap development with CSS class autocompletion for efficient coding in Visual Studio Code.
+パブリッシャー: Hosain Hossaini
+VS Marketplace リンク: https://marketplace.visualstudio.com/items/?itemName=hossaini.bootstrap-intellisense
+
+### ⑤ 手軽にコードを実行できる
+名前: Code Runner
+ID: formulahendry.code-runner
+説明: Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Obj-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim,
+パブリッシャー: Jun Han
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner
+
+### ⑥ Django用HTML補完機能
+名前: Djaneiro - Django Snippets
+ID: thebarkman.vscode-djaneiro
+説明: A collection of snippets for django templates, models, views, fields & forms. Ported from Djaneiro for SublimeText
+パブリッシャー: Scott Barkman
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=thebarkman.vscode-djaneiro
+
+### ⑦ Djangoテンプレートタグのコード補完をしてくれる
+名前: Django
+ID: batisteo.vscode-django
+説明: Beautiful syntax and scoped snippets for perfectionists with deadlines
+パブリッシャー: Baptiste Darthenay
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django
+
+### ⑧ Djangoテンプレートの整形
+名前: Django Template Support
+ID: junstyle.vscode-django-support
+説明: 📍formatter, django template support, highlight, format, prettier, auto-complete
+パブリッシャー: junstyle
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=junstyle.vscode-django-support
+
+### ⑨ テーマ
+名前: Feather
+ID: dericcain.feather
+説明: A light, elegant theme for Visual Studio code.
+パブリッシャー: Deric Cain
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=dericcain.feather
+
+### ⑩ Geminiを使ったソースコード支援
+名前: Gemini Code Assist
+ID: Google.geminicodeassist
+説明: AI-assisted development powered by Gemini
+パブリッシャー: Google
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist
+
+### ⑪ Gitによるコミット履歴の表示
+名前: Git Graph
+ID: mhutchie.git-graph
+説明: View a Git Graph of your repository, and perform Git actions from the graph.
+パブリッシャー: mhutchie
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
+
+### ⑫ HTMLの開始タグと終了タグにアンダーラインを付けてHTMLの構造を見やすくしてくれる
+名前: Highlight Matching Tag
+ID: vincaslt.highlight-matching-tag
+説明: Highlights matching closing and opening tags
+パブリッシャー: vincaslt
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag
+
+### ⑬ HTMLやCSSのコードを補完してくれる
+名前: HTML CSS Support
+ID: ecmel.vscode-html-css
+説明: CSS Intellisense for HTML
+パブリッシャー: ecmel
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css
+
+### ⑭ HTMLないにある画像パスからエディタ上で画像をプレビュー
+名前: Image preview
+ID: kisstkondoros.vscode-gutter-preview
+説明: Shows image preview in the gutter and on hover
+パブリッシャー: Kiss Tamás
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview
+
+### ⑮ インデントごとに色分けして表示
+名前: indent-rainbow
+ID: oderwat.indent-rainbow
+説明: Makes indentation easier to read
+パブリッシャー: oderwat
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
+
+### ⑯ コード補完機能
+名前: IntelliCode
+ID: VisualStudioExptTeam.vscodeintellicode
+説明: AI-assisted development
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
+
+### ⑰ ⑯と一緒に追加される：コード補完機能
+名前: IntelliCode API Usage Examples
+ID: VisualStudioExptTeam.intellicode-api-usage-examples
+説明: See relevant code examples from GitHub for over 100K different APIs right in your editor.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.intellicode-api-usage-examples
+
+### ⑱ Pythonのimport文を自動で並び替える
+名前: isort
+ID: ms-python.isort
+説明: Import organization support for Python files using isort.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-python.isort
+
+### ⑲ VSCodeの日本語化
+名前: Japanese Language Pack for Visual Studio Code
+ID: MS-CEINTL.vscode-language-pack-ja
+説明: Language pack extension for Japanese
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja
+
+### ⑳ HTMLをVSCode内でプレビュー
+名前: Live Preview
+ID: ms-vscode.live-server
+説明: Hosts a local server in your workspace for you to preview your webpages on.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server
+
+### ㉑ アイコンテーマ
+名前: Material Icon Theme
+ID: PKief.material-icon-theme
+説明: Material Design Icons for Visual Studio Code
+パブリッシャー: Philipp Kief
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+
+### ㉒ 選択したファイルをOS既定のアプリで開く
+名前: Open
+ID: sandcastle.vscode-open
+説明: Opens the current file with the default for the OS
+パブリッシャー: sandcastle
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=sandcastle.vscode-open
+
+### ㉓ ファイルパスの入力補完
+名前: Path Intellisense
+ID: christian-kohler.path-intellisense
+説明: Visual Studio Code plugin that autocompletes filenames
+パブリッシャー: Christian Kohler
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense
+
+### ㉔ PoserShell拡張
+名前: PowerShell
+ID: ms-vscode.powershell
+説明: Develop PowerShell modules, commands and scripts in Visual Studio Code!
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
+
+### ㉕ Python言語開発のサポート
+名前: Pylance
+ID: ms-python.vscode-pylance
+説明: A performant, feature-rich language server for Python in VS Code
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+
+### ㉖ Python言語開発のサポート
+名前: Python
+ID: ms-python.python
+説明: Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+### ㉗ Python言語開発のサポート
+名前: Python Debugger
+ID: ms-python.debugpy
+説明: Python Debugger extension using debugpy.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy
+
+### ㉘ Python環境管理ツール
+名前: Python Environments
+ID: ms-python.vscode-python-envs
+説明: Provides a unified python environment experience
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs
+
+### ㉙ Pythonでインデントを自動でそろえる
+名前: Python Indent
+ID: KevinRose.vsc-python-indent
+説明: Correct Python indentation
+パブリッシャー: Kevin Rose
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent
+
+### ㉚ SSHリモート接続
+名前: Remote - SSH
+ID: ms-vscode-remote.remote-ssh
+説明: Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
+
+### ㉛ ㉚Remote-SSHのConfig設定時に入力補完してくれる
+名前: Remote - SSH: Editing Configuration Files
+ID: ms-vscode-remote.remote-ssh-edit
+説明: Edit SSH configuration files
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit
+
+### ㉜ SSHやトンネルで接続したリモート機器のリストなどを表示する
+名前: Remote Explorer
+ID: ms-vscode.remote-explorer
+説明: View remote machines for SSH and Tunnels.
+パブリッシャー: Microsoft
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer
+
+### ㉝ SQLデータベース管理ツール
+名前: SQLTools
+ID: mtxr.sqltools
+説明: Connecting users to many of the most commonly used databases. Welcome to database management done right.
+パブリッシャー: Matheus Teixeira
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools
+
+### ㉞ SQLTools拡張機能のMySQL/MariaDB/TiDBドライバ
+名前: SQLTools MySQL/MariaDB/TiDB
+ID: mtxr.sqltools-driver-mysql
+説明: SQLTools MySQL/MariaDB/TiDB
+パブリッシャー: Matheus Teixeira
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql
+
+### ㉟ SVGプレビュー
+名前: Svg Preview
+ID: SimonSiefke.svg-preview
+説明: Preview for Svg files
+パブリッシャー: Simon Siefke
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview
+
+### ㊱ 行の最後の無駄なスペースを取り除く
+名前: Trailing Spaces
+ID: shardulm94.trailing-spaces
+説明: Highlight trailing spaces and delete them in a flash!
+パブリッシャー: Shardul Mahadik
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+
+### ㊲ PDFをVSCode内で表示できる
+名前: vscode-pdf
+ID: tomoki1207.pdf
+説明: Display pdf file in VSCode.
+パブリッシャー: tomoki1207
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf
+
+### ㊳ 全角スペースを可視化
+名前: zenkaku
+ID: mosapride.zenkaku
+説明: show double-byte-whiteSpace
+パブリッシャー: mosapride
+VS Marketplace リンク: https://marketplace.visualstudio.com/items?itemName=mosapride.zenkaku

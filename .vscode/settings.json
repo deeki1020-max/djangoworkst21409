@@ -1,0 +1,587 @@
+{
+    //* ウィンドウのサイズ調整
+    "window.zoomLevel": 0.8,
+    "workbench.editor.tabSizing": "shrink", // ファイル名タブのサイズ
+    "workbench.tree.indent": 10,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.editor.wrapTabs": true,
+    "workbench.iconTheme": "material-icon-theme", // アイコンテーマ
+    "workbench.colorTheme": "Feather", // 画面のテーマ
+    "workbench.colorCustomizations": {
+        // カッコの色
+        "editorBracketHighlight.foreground1": "#FF3335", // 赤
+        "editorBracketHighlight.foreground2": "#FF8C00", // 橙
+        "editorBracketHighlight.foreground3": "#E0BF01", // 黄(ゴールド)
+        "editorBracketHighlight.foreground4": "#30C430", // 緑
+        "editorBracketHighlight.foreground5": "#3F7FFF", // 青
+        "editorBracketHighlight.foreground6": "#FF7FFF", // 紫
+        // インデント
+        "editorIndentGuide.background1": "#FF3335",
+        "editorIndentGuide.background2": "#FF8C00",
+        "editorIndentGuide.background3": "#E0BF01",
+        "editorIndentGuide.background4": "#30C430",
+        "editorIndentGuide.background5": "#3F7FFF",
+        "editorIndentGuide.background6": "#FF7FFF",
+        "editorIndentGuide.activeBackground1": "#fff",
+        "editorIndentGuide.activeBackground2": "#fff",
+        "editorIndentGuide.activeBackground3": "#fff",
+        "editorIndentGuide.activeBackground4": "#fff",
+        "editorIndentGuide.activeBackground5": "#fff",
+        "editorIndentGuide.activeBackground6": "#fff",
+        //* []にあるFeatherは選択しているテーマの名前にする
+        "[Feather]": {
+            //* FeatherはLightテーマ、Dark系テーマの時は行ハイライト色を変更した方がいい
+            "editor.findMatchHighlightBackground": "#AA22FF22", // 検索キーワードの背景色（非選択）
+            "editor.findMatchBackground": "#AA22FF11", // 検索キーワードの背景色（選択中）
+            "editorSuggestWidget.selectedBackground": "#BAE8E9", // 補完入力で選択されている候補の背景色
+            "editorStickyScroll.background": "#BAE9D1",
+            "editorStickyScrollHover.background": "#A6C0B3",
+            "editorStickyScroll.border": "#3A7A59",
+            "editorStickyScroll.shadow": "#849c90",
+            "editorLineNumber.foreground": "#405C79",
+            "editorLineNumber.activeForeground": "#56BF8B",
+            "editor.selectionBackground": "#98D98E", // 緑(選択背景)
+            "editor.lineHighlightBackground": "#FAFA82", //行ハイライトの色
+            // *"contrastActiveBorder": "#B0F010",  // アクティブタブの枠線
+            "tab.activeBorder": "#FF6B00", // アクティブタブの境界線
+            "tab.activeBackground": "#FFDD005E", //アクティブタブの背景色,
+            "tab.activeForeground": "#33b101", // アクティブタブの文字色の変更
+            "tab.inactiveForeground": "#192f60A0", // 非アクティブタブの文字色の変更
+            "editorGroup.border": "#19405C79", // エディタを分割したときの境界線
+            "sideBar.border": "#19405C79", // エクスプローラとエディタの境界線
+            //* ターミナルの色変更 powershellは7をインストールするとこの設定が反映されます
+            //* Base16 Terminal Colors for Visual Studio CodeにあるUnikitty Lightの文字色と背景色を変更
+            "terminal.background": "#F7F9FB", // Darkがいい人は濃い色にする
+            "terminal.foreground": "#405C79", // プロンプトの色
+            "terminalCursor.background": "#405C79",
+            "terminalCursor.foreground": "#405C79",
+            "terminal.ansiBlack": "#FFFFFF",
+            "terminal.ansiBlue": "#775DFF",
+            "terminal.ansiBrightBlack": "#A7A5A8",
+            "terminal.ansiBrightBlue": "#775DFF",
+            "terminal.ansiBrightCyan": "#149BDA",
+            "terminal.ansiBrightGreen": "#17AD98",
+            "terminal.ansiBrightMagenta": "#AA17E6",
+            "terminal.ansiBrightRed": "#D8137F",
+            "terminal.ansiBrightWhite": "#322D34", // コマンド入力候補の色
+            "terminal.ansiBrightYellow": "#DC8A0E", // コマンドの色
+            "terminal.ansiCyan": "#149BDA",
+            "terminal.ansiGreen": "#17AD98",
+            "terminal.ansiMagenta": "#AA17E6",
+            "terminal.ansiRed": "#D8137F",
+            "terminal.ansiWhite": "#405C79",
+            "terminal.ansiYellow": "#DC8A0E",
+            //* ステータスバーの色変更
+            "statusBar.background": "#405c79"
+        }
+    },
+    //* プログラム内の括弧やダブルクォートの太字設定
+    "editor.tokenColorCustomizations": {
+        "[Feather]": {
+            "numbers": "#0c9c84", // 数字の色
+            "keywords": "#3193c6", // キーワードの色（importなど）
+            "strings": "#8B56BF", // 文字列の色はデフォルト
+            // "variables": "#FF00FF", //
+            "types": "#155a5a",
+            // "comments": "#FF0000", //   "コメントの色はデフォルト
+            "textMateRules": [
+                // // {
+                // //   "scope": [
+                // //     "constant.language",
+                // //     "constant.character",
+                // //     "constant.other"
+                // //   ],
+                // //   "settings": {
+                // //     "foreground": "#ff2a04"
+                // //   }
+                // // },
+                {
+                    "scope": [
+                        "string.quoted.docstring.multi"
+                    ],
+                    "settings": {
+                        "foreground": "#919D9F",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": [
+                        "support.type"
+                    ],
+                    "settings": {
+                        "foreground": "#3193C6",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "keyword", // 記号などのキーワード
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#7597b9"
+                    }
+                },
+                {
+                    "scope": [
+                        "entity.name.function",
+                        "support.function",
+                        "meta.function-call.generic"
+                    ],
+                    "settings": {
+                        "fontStyle": "italic",
+                        "foreground": "#313131"
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.definition.dict.begin",
+                        "punctuation.definition.dict.end",
+                        "punctuation.definition.arguments.begin",
+                        "punctuation.definition.arguments.end",
+                        "punctuation.definition.list.begin",
+                        "punctuation.definition.list.end",
+                        "punctuation.definition.string.begin",
+                        "punctuation.definition.string.end",
+                        "punctuation.definition.parameters.begin",
+                        "punctuation.definition.parameters.end",
+                        "punctuation.parenthesis.begin",
+                        "punctuation.parenthesis.end"
+                    ],
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    //* python 関数の引数の色指定（元は黄色でLight背景では見えないため）
+                    "scope": [
+                        "variable.parameter.function-call"
+                    ],
+                    "settings": {
+                        "foreground": "#f18136"
+                    }
+                },
+                {
+                    "scope": "support.type.property-name",
+                    "settings": {
+                        "foreground": "#3193C6",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": [
+                        "variable.parameter.function",
+                        "meta.function-call.arguments"
+                    ],
+                    "settings": {
+                        "foreground": "#395063",
+                        "fontStyle": ""
+                    }
+                }
+                // {
+                //   // 警告とエラーの波線の色
+                //   "scope": ["editorWarning.foreground", "editorError.foreground"],
+                //   "settings": {
+                //     "foreground": "#FF0000",
+                //     "fontStyle": "bold"
+                //   }
+                // }
+            ]
+        }
+    },
+    "editor.hover.enabled": true, // ホバー表示
+    "editor.guides.bracketPairs": true,
+    "editor.stickyScroll.enabled": false, // カーソル位置にあるコードがどこのメソッド（タグ）内か表示
+    "editor.minimap.enabled": false, // ミニマップ表示
+    //* マウスホイールによるフォントサイズ変更
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true, // タブとスペースの変換しない
+    // 開いたファイルのインデントとタブ/スペース変換はこのvscodeの設定に従うための設定（false）
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "'Myrica MM','BIZ UDゴシック', Consolas, 'Courier New', monospace",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    // "editor.defaultFormatter": "esbenp.prettier-vscode", // 拡張機能Prettier - Code formatter
+    "editor.formatOnSave": true,
+    "[django-html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "junstyle.vscode-django-support"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    // "[css]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[python]": {
+    // 	"editor.defaultFormatter": "ms-python.black-formatter", // 拡張機能Black Formatter
+    // "editor.codeActionsOnSave": {
+    //     "source.organizeImports": "always"
+    // },
+    // },
+    // "[sql]": {
+    //   "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc" // 拡張機能SQL Formatter VSCode
+    // },
+    // "SQL-Formatter-VSCode.keywordCase": "upper",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "phase",
+    "editor.smoothScrolling": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.dragAndDrop": false,
+    "editor.renderWhitespace": "all",
+    "editor.indentSize": "tabSize",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
+        "editor.formatOnSave": true
+    },
+    "python.sortImports.path": "isort", // 拡張機能isort
+    // "isort.args": [ // python importの並び替え
+    //     "--profile",
+    //     "black"
+    // ],
+    //* デバッグ関連
+    "debug.console.fontSize": 16,
+    "debug.inlineValues": "on",
+    "debug.internalConsoleOptions": "openOnSessionStart",
+    "debug.openDebug": "openOnSessionStart",
+    //* ターミナル設定
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            // 下記設定はPowerShell7をインストールした前提。インストールしてない場合はコメントを使用
+            // "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+            "env": {
+                "PSExecutionPolicyPreference": "RemoteSigned"
+            }
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.mouseWheelZoom": true,
+    "terminal.integrated.fontFamily": "'Myrica MM', 'BIZ UDゴシック', Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorBlinking": true,
+    //* 拡張機能 Code Runner Runner拡張機能の設定
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "zig": "zig run",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runghc",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName",
+        "mojo": "mojo run"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    //* 拡張機能 indent-rainbow インデント色設定
+    "indentRainbow.includedLanguages": [
+        "python",
+        "html",
+        "css",
+        "Django",
+        "javascript",
+        "sql",
+        "django-html"
+    ],
+    "indentRainbow.colors": [
+        "rgba(255,127,255,0.1)", // ピンク
+        "rgba(255,  140,  0, 0.1)", // 橙
+        "rgba(255,255,64,0.2)", // 黄"
+        "rgba(127,255,127,0.1)", // 緑
+        "rgba(79,236,236,0.1)", // 青
+        "rgba(138,  43, 226, 0.2)" // 紫
+    ],
+    "indentRainbow.excludedLanguages": [
+        "plaintext"
+    ],
+    "indentRainbow.colorOnWhiteSpaceOnly": true,
+    "explorer.incrementalNaming": "smart",
+    //* Auto Close Tag HTMLタグのクローズタグの自動補完設定
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (EEx)",
+        "HTML (Eex)",
+        "plist",
+        "django-html", // Django用HTML補完追加
+        "html" // html追加
+    ],
+    "auto-close-tag.SublimeText3Mode": true,
+    //* 拡張機能 Auto Rename Tag キーワード一括リネーム設定
+    "auto-rename-tag.activationOnLanguage": [
+        "*"
+    ],
+    //* 拡張機能 Highlight Matching Tag HTMLタグの対応開始・終了タグのスタイル
+    "highlight-matching-tag.styles": {
+        // HTMLタグのハイライト色
+        "opening": {
+            "left": {
+                "underline": "orange"
+            },
+            "right": {
+                "surround": "#155FFA"
+            },
+            "name": {
+                "highlight": "rgba(180, 20, 80, 0.3)"
+            }
+        },
+        "closing": {
+            "full": {
+                "custom": {
+                    "dark": {
+                        "borderWidth": "0 0 1px 0",
+                        "borderColor": "white",
+                        "borderStyle": "solid",
+                        "borderRadius": "4px",
+                        "right": "10px"
+                    },
+                    "light": {
+                        "borderWidth": "0 0 1px 0",
+                        "borderColor": "red",
+                        "borderStyle": "solid",
+                        "borderRadius": "4px",
+                        "right": "10px"
+                    }
+                }
+            }
+        }
+    },
+    //* ファイル処理
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true, // ファイル最後に改行入れる
+    "files.exclude": {
+        ".vscode": false
+    },
+    "files.watcherExclude": {
+        "**": false
+    },
+    "files.associations": {
+        "**/templates/**/*.html": "django-html",
+        "*.tpl": "django-html"
+    },
+    //* Gitでコミットするときにコメント入れるファイルを開かないようにする
+    "git.autofetch": true,
+    "git.useEditorAsCommitInput": false,
+    // "gitlens.currentLine.dateFormat": "",// GitLens拡張機能用設定
+    //* python用フォーマッター設定
+    "pythonIndent.keepHangingBracketOnLine": false,
+    "black-formatter.args": [
+        "--skip-string-normalization"
+    ],
+    //* 拡張機能 Better-comments コメント色分けルール
+    "better-comments.highlightPlainText": true,
+    "better-comments.multilineComments": true,
+    "better-comments.tags": [
+        // pythonのコメントの色分けルール
+        {
+            "tag": "!", // ! 警告
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?", // ? 疑問
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "//", // //取り消し線
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo", // TODO コメント
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*", // * 強調
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+        }
+    ],
+    //* 拡張機能 Emmet Emmet(自動補完機能)の有効化
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "html": "html"
+    },
+    "emmet.variables": {
+        "lang": "ja"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    // //* Error Lens拡張機能の設定
+    // "errorLens.gutterIconsEnabled": true, // エラー行にアイコン表示
+    // "errorLens.gutterIconSet": "borderless", // エラーアイコンの種類
+    // "errorLens.codeLensEnabled": true,
+    // "errorLens.codeLensOnClick": "showQuickFix",
+    // "errorLens.messageTemplate": "[$severity:$message]",
+    // "errorLens.statusBarColorsEnabled": false,
+    // "errorLens.messageBackgroundMode": "line",
+    // "errorLens.fontStyleItalic": false,
+    // "errorLens.statusBarMessageTemplate": "[$severity:$message]",
+    // "errorLens.gutterIconSize": "100%",
+    // "errorLens.messageEnabled": true,
+    // "errorLens.problemRangeDecorationEnabled": true,
+    // "errorLens.statusBarIconsEnabled": true,
+    // "errorLens.codeLensTemplate": "[$severity:$message]",
+    // "errorLens.enableOnDiffView": false,
+    // "errorLens.fontWeight": "normal",
+    // "errorLens.ignoreUntitled": false,
+    // "errorLens.fontSize": "small",
+    // "errorLens.enabled": true,
+    // "errorLens.enabledInMergeConflict": true,
+    // "errorLens.editorHoverPartsEnabled": {
+    //   "messageEnabled": true
+    // },
+    "editor.codeLens": true,
+    // VSCode標準のクローズ機能OFF
+    "html.autoClosingTags": false,
+    // python仮想環境の自動起動設定
+    "python.terminal.activateEnvironment": true,
+    // pythonインタープリターの設定
+    "python.defaultInterpreterPath": "",
+    // 表示に使うブラウザ
+    "livePreview.customExternalBrowser": "Chrome",
+    // "livePreview.customExternalBrowser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    // プレビュー表示するソフト（内部埋め込み：デフォルト"Embedded Preview"）、"External Browser"にするとブラウザ起動
+    "livePreview.openPreviewTarget": "External Browser",
+    // デバッグツールバーの表示一(画面上部検索バーと一緒に・・・)
+    "debug.toolBarLocation": "commandCenter",
+    "python.analysis.autoImportCompletions": true, // pythonの自動importを有効
+    "python.analysis.indexing": true,
+    // DB接続設定用
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "DjangoDB",
+            "database": "djangodb",
+            "username": "root",
+            "password": "rootpass"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "TEST09",
+            "database": "djangodb",
+            "username": "root",
+            "password": "rootpass"
+        }
+    ],
+    // GeminiCodeAssistのGem
+    "geminicodeassist.rules": "あなたは**Django開発が初めての初心者**をサポートする、経験豊富な**エンジニア**です。\n\n**すべての提案と回答**は、以下の技術とコーディング規約に**厳密に従って**ください。\n\n### 1. 技術スタックとスタイリング\n\n1.  **フレームワーク:** Django 5 の最新の書き方を採用すること。\n2.  **フロントエンド:** Bootstrapのクラスと構造を主に利用すること。BootstrapのCDNは**本家が推奨する最新安定版**のものを使用してください。\n3.  **フォームのスタイル:** `forms.py`で作成するすべてのフォームのフィールドウィジェットには、**自動的にBootstrapのCSSクラスが適用される**ように実装すること（例: `<input>`には**`'class': 'form-control'`**を適用）。\n4.  **データベース:** MySQL環境での動作を前提とすること。\n\n### 2. データベーススキーマ情報\n\n**以下のテーブルスキーマを前提として開発を進めてください。**\n\n```sql\nCREATE TABLE `customer` (\n  `cust_code` int NOT NULL,\n  `cust_name` varchar(12) DEFAULT NULL,\n  `staff_code` int DEFAULT NULL,\n  PRIMARY KEY (`cust_code`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\nCREATE TABLE `goods` (\n  `goods_code` char(4) NOT NULL,\n  `goods_name` varchar(40) DEFAULT NULL,\n  `classify` varchar(12) DEFAULT NULL,\n  `sl_price` int DEFAULT NULL,\n  `cs_price` int DEFAULT NULL,\n  `stocks` smallint DEFAULT NULL,\n  `buy_code` int DEFAULT NULL,\n  `goods_img` varchar(100) DEFAULT NULL,\n  PRIMARY KEY (`goods_code`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\nCREATE TABLE `order_goods` (\n  `order_num` int NOT NULL,\n  `order_date` datetime DEFAULT NULL,\n  `goods_code` char(4) DEFAULT NULL,\n  `quantity` smallint DEFAULT NULL,\n  PRIMARY KEY (`order_num`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\nCREATE TABLE `sales` (\n  `slip_num` int NOT NULL,\n  `ln_num` smallint NOT NULL,\n  `sale_date` datetime DEFAULT NULL,\n  `goods_code` char(4) DEFAULT NULL,\n  `quantity` smallint DEFAULT NULL,\n  `cust_code` int DEFAULT NULL,\n  PRIMARY KEY (`slip_num`,`ln_num`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\nCREATE TABLE `staff` (\n  `staff_code` int NOT NULL,\n  `staff_name` varchar(12) DEFAULT NULL,\n  `work_years` tinyint DEFAULT NULL,\n  `wages` int DEFAULT NULL,\n  `staff_img` varchar(100) DEFAULT NULL,\n  PRIMARY KEY (`staff_code`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\nCREATE TABLE `stocking` (\n  `slip_num` int NOT NULL,\n  `ln_num` smallint NOT NULL,\n  `stk_date` datetime DEFAULT NULL,\n  `goods_code` char(4) DEFAULT NULL,\n  `quantity` smallint DEFAULT NULL,\n  `order_num` int DEFAULT NULL,\n  PRIMARY KEY (`slip_num`,`ln_num`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\n```\n\n---\n\n### 3. 命名規則 (Input/Edit/Delete キーワード利用)\n\nすべてのアプリケーション要素について、処理種別（**`Input`** / **`Edit`** / **`Delete`**）に基づいた命名を厳守すること。\n\n#### 3-1. セッションに登録するデータの命名\n\nセッションに格納するデータ名は、**データの状態を示すプレフィックス**と**モデル名**、末尾の**`_data`**で構成します。\n\n| プレフィックス | 処理・状態 | 例 (`モデル名`が`goods`の場合) |\n| :--- | :--- | :--- |\n| **`i`** | 登録**予定**データ | `i**goods**_data` |\n| **`e`** | **変更**入力データ | `e**goods**_data` |\n| **`eu`** | **変更後**の更新データ | `eu**goods**_data` |\n| **`d`** | **削除予定**データ | `d**goods**_data` |\n| **`s`** | **検索**条件データ | `s**goods**_data` |\n\n#### 3-2. `views.py`内の関数・クラスの命名\n\n処理フローに応じて、**汎用的な関数**と**Viewクラス**を使い分けます。\n\n| 対象 | 命名規則 | 役割 |\n| :--- | :--- | :--- |\n| **関数** | `**menu**` | メニュー画面への遷移 |\n| **関数** | `**show**` | 一覧表示画面の表示 |\n| **Viewクラス** (登録) | `**Input**View` / `**IConfirm**View` / `**IResult**View` | 登録 (入力 / 確認 / 完了) 処理 |\n| **Viewクラス** (変更) | `**Edit**View` / `**EConfirm**View` / `**EResult**View` | 変更 (入力 / 確認 / 完了) 処理 |\n| **Viewクラス** (削除) | `**Del**View` / `**DConfirm**View` / `**DResult**View` | 削除 (処理 / 確認 / 完了) 処理 |\n\n#### 3-3. HTMLファイル名 (`templates`フォルダ内)\n\n画面の種類に応じたファイル名を採用します。\n\n| 画面の役割 | ファイル名 |\n| :--- | :--- |\n| トップ画面 | `**index**.html` |\n| メニュー画面 | `**menu**.html` |\n| 一覧表示画面 | `**show**.html` |\n| 登録 (入力/確認/完了) | `**input**.html` / `**iconfirm**.html` / `**iresult**.html` |\n| 変更 (入力/確認/完了) | `**edit**.html` / `**econfirm**.html` / `**eresult**.html` |\n| 削除 (確認/完了) | `**dconfirm**.html` / `**dresult**.html` |\n\n#### 3-4. `urls.py`に記載するパス\n\n画面・処理の種別を示す**短いプレフィックス**でパスを構成します。\n\n| 画面・処理 | パス |\n| :--- | :--- |\n| 一覧表示 | `**sh/**` (show) |\n| 登録 (入力/確認/完了) | `**in/**` / `**ico/**` / `**ire/**` |\n| 変更 (入力/確認/完了) | `**ed/**` / `**eco/**` / `**ere/**` |\n| 削除 (確認/完了) | `**del/**` / `**dre/**` |\n\n---\n\n### 4. トーンとコーディングスタイル\n\n5.  **トーン:** ユーザーは初心者であるため、常に**優しく、丁寧な言葉遣い**を心がけてください。\n6.  **コーディングスタイル:** Pythonコードには、その役割を簡潔に説明する**コメントを適宜追加**してください。\n7.  **出力形式:** 既存のコードを修正する場合は、**元のコードとの差分形式**で提案を出力し、ユーザーが**提案を承諾すると元のコードが上書き**されるよう誘導すること。コードの提案のみを行い、**次のコードの提案は行わない**こと。",
+    "geminicodeassist.inlineSuggestions.nextEditPredictions": false,
+}

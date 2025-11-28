@@ -1,0 +1,150 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "★Webｱﾌﾟﾘ(Chrome)",
+      "type": "debugpy",
+      "request": "launch",
+      "justMyCode": true,
+      "console": "integratedTerminal",
+      "args": [],
+      "module": "tasks",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/.vscode"
+      },
+      "preLaunchTask": "StartChrome and CloseTerminal"
+    },
+    {
+      "name": "1:仮想環境起動",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "./djangovm/Scripts/activate",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "2:ﾌﾟﾛｼﾞｪｸﾄ起動",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\.vscode\\debugpy\\vscode_manage.py",
+      "args": [
+        "runserver",
+        "0.0.0.0:8000"
+      ],
+      "console": "integratedTerminal",
+      "preLaunchTask": "Select Project"
+    },
+    {
+      "name": "2.1:選択ﾌﾟﾛｼﾞｪｸﾄﾘｾｯﾄ",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\.vscode\\debugpy\\vscode_manage.py",
+      "args": [
+        "--reset"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "3:Chrome起動",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://127.0.0.1:8000/",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "4:ﾌﾟﾛｼﾞｪｸﾄ作成",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${workspaceFolder}/djangovm/Scripts/django-admin.exe",
+      "args": [
+        "startproject",
+        "${input:inputString}"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "5:ｱﾌﾟﾘｹｰｼｮﾝ作成",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/${input:selectProject}/manage.py",
+      "args": [
+        "startapp",
+        "${input:inputString}"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/${input:selectProject}"
+    },
+    {
+      "name": "6:ｾｯｼｮﾝ作成",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/.vscode/debugpy/vscode_manage.py",
+      "args": [
+        "migrate"
+      ],
+      "console": "integratedTerminal",
+      "preLaunchTask": "StopServer"
+    },
+    {
+      "name": "7:ﾏｲｸﾞﾚｰｼｮﾝﾌｧｲﾙ作成",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/.vscode/debugpy/vscode_manage.py",
+      "args": [
+        "makemigrations"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "8:ﾏｲｸﾞﾚｰｼｮﾝ実行",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/.vscode/debugpy/vscode_manage.py",
+      "args": [
+        "migrate"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "9:ﾓﾃﾞﾙ作成",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/.vscode/debugpy/vscode_manage.py",
+      "args": [
+        "inspectdb",
+        "${input:inputString}"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "10:Django管理ｻｲﾄ",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://127.0.0.1:8000/admin/"
+    },
+    {
+      "name": "11:仮想環境停止",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "deactivate",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "inputString",
+      "type": "promptString",
+      "description": "名前を入力"
+    },
+    {
+      "id": "selectProject",
+      "type": "pickString",
+      "description": "プロジェクトを選択してください",
+      "options": [
+        "OrderSystem",
+        "Sample",
+        "test_django",
+        "配布"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{% extends 'base_menu.html' %}
+
+{% block hmenutitle %}
+  社員情報管理
+{% endblock %}
+
+{% block mmenutitle %}
+  社員情報管理メニュー
+{% endblock %}
+
+{# 一覧表示ボタン → staff_show に変更 #}
+{% block urlbtn1 %}
+  {% url 'staff_show' %}
+{% endblock %}
+
+{% block showlinkname %}
+  社員一覧表示
+{% endblock %}
+
+{% block showlinkinamecontents %}
+  現在登録されている社員情報を一覧表示します。検索・変更・消去もこちらから行えます。
+{% endblock %}
+
+{# 登録ボタン → staff_in に変更 #}
+{% block urlbtn2 %}
+  {% url 'staff_in' %}
+{% endblock %}
+
+{% block inputlinkname %}
+  社員登録
+{% endblock %}
+
+{% block inputlinknamecontents %}
+  社員情報を新規登録します。
+{% endblock %}
+
+{# 3つ目のボタンも、他と同じように URL だけ返す形に揃える想定 #}
+{% block urlbtn3 %}
+  {% url 'staff_show' %}
+{% endblock %}
+
+{% block editlinkname %}
+  社員情報修正・削除
+{% endblock %}
+
+{% block editlinknamecontents %}
+  登録されている社員情報の修正・削除を行います。
+{% endblock %}

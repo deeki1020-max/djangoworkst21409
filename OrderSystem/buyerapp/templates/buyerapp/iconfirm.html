@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  仕入先登録確認
+{% endblock %}
+{% block mtitle %}
+  仕入先登録確認
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h4 class="mb-4">以下の内容で登録します</h4>
+        {% include 'buyerapp/buyertable.html' %}
+      </div>
+      <form method="post" action="{% url 'buyer_ico' %}">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+          <input type="submit" class="btn btn-primary" value="確定" />
+          <a class="btn btn-secondary ms-3" href="{% url 'buyer_in' %}">登録画面に戻る</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class="row d-flex mt-1">
+	<!-- ⑦ボタン -->
+	<div class="col  d-flex align-items-center">
+		<button class="btn btn-outline-primary">プライマリーボタン</button>
+		<button class="btn btn-outline-secondary">セカンダリーボタン</button>
+		<button class="btn btn-outline-success">成功ボタン</button>
+		<button class="btn btn-outline-danger">危険ボタン</button>
+		<button class="btn btn-outline-warning">警告ボタン</button>
+		<button class="btn btn-outline-info">情報ボタン</button>
+		<button class="btn btn-outline-light">ライトボタン</button>
+		<button class="btn btn-outline-dark">ダークボタン</button>
+		<button class="btn btn-outline-link">リンクボタン</button>
+	</div>
+</div>

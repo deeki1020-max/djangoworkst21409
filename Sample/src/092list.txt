@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center">
+	<label for="exampleInputText" class="col-2">水平リスト</label>
+	<ul class="list-group list-group-horizontal mt-2 mb-2">
+		<li class="list-group-item">デフォルト</li>
+		<li class="list-group-item list-group-item-primary">プライマリー</li>
+		<li class="list-group-item list-group-item-secondary">セカンダリー</li>
+		<li class="list-group-item list-group-item-success">成功</li>
+		<li class="list-group-item list-group-item-danger">危険</li>
+		<li class="list-group-item list-group-item-warning">警告</li>
+		<li class="list-group-item list-group-item-info">情報</li>
+		<li class="list-group-item list-group-item-light">ライト</li>
+		<li class="list-group-item list-group-item-dark">ダーク</li>
+	</ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col  d-flex align-items-center">
+		<button class="btn btn-primary">プライマリーボタン</button>
+		<button class="btn btn-secondary">セカンダリーボタン</button>
+		<button class="btn btn-success">成功ボタン</button>
+		<button class="btn btn-danger">危険ボタン</button>
+		<button class="btn btn-warning">警告ボタン</button>
+		<button class="btn btn-info">情報ボタン</button>
+		<button class="btn btn-light">ライトボタン</button>
+		<button class="btn btn-dark">ダークボタン</button>
+		<button class="btn btn-link">リンクボタン</button>
+	</div>
+</div>

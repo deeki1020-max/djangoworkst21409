@@ -1,0 +1,25 @@
+{% extends 'base_menu.html' %}
+{% block hmenutitle %}
+  得意先情報管理
+{% endblock %}
+{% block mmenutitle %}
+  得意先情報管理メニュー
+{% endblock %}
+{% block urlbtn1 %}
+  {% url 'customer_show' %}
+{% endblock %}
+{% block showlinkname %}
+  得意先一覧表示
+{% endblock %}
+{% block showlinkinamecontents %}
+  登録されている得意先情報の一覧表示ができます。
+{% endblock %}
+{% block urlbtn2 %}
+  {% url 'customer_in' %}
+{% endblock %}
+{% block inputlinkname %}
+  得意先情報登録
+{% endblock %}
+{% block inputlinknamecontents %}
+  得意先情報の新規登録ができます。
+{% endblock %}

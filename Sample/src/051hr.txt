@@ -1,0 +1,6 @@
+<hr class="border border-primary" />
+<hr class="border border-secondary" />
+<hr class="border border-success" />
+<hr class="border border-danger" />
+<hr class="border border-warning" />
+<hr class="border border-info" />

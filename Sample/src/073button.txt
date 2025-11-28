@@ -1,0 +1,15 @@
+<div class="row>
+	<div class=" col d-flex align-items-center">
+		<div class=" list-group list-group-horizontal mt-2 mb-2">
+			<a href="#" class="list-group-item list-group-item-action">デフォルト</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-primary">プライマリー</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-secondary">セカンダリー</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-success">成功</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-danger">危険</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-warning">警告</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-info">情報</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-light">ライト</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-dark">ダーク</a>
+		</div>
+	</div>
+</div>

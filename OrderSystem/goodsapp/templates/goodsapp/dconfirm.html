@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block htitle %}
+  商品削除確認
+{% endblock %}
+
+{% block mtitle %}
+  商品削除確認画面
+{% endblock %}
+
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h4 class="mb-4 text-danger">本当にこの商品を削除しますか？</h4>
+        <p>一度削除すると、元に戻すことはできません。</p>
+
+        <table class="table table-bordered mt-4">
+          <tr>
+            <th class="w-25 table-light">商品コード</th>
+            <td>{{ goods.goods_code }}</td>
+          </tr>
+          <tr>
+            <th class="table-light">商品名</th>
+            <td>{{ goods.goods_name }}</td>
+          </tr>
+          <tr>
+            <th class="table-light">分類</th>
+            <td>{{ goods.classify }}</td>
+          </tr>
+        </table>
+
+        <form method="post" class="mt-4">
+          {% csrf_token %}
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">削除を確定する</button>
+            <a class="btn btn-secondary ms-3" href="{% url 'goods_show' %}">一覧に戻る</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

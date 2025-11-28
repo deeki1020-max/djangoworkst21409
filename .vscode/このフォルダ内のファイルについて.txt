@@ -1,0 +1,126 @@
+※このファイルは拡張子mdにすればMarkDownとして表示できます。
+
+# Django 開発支援環境（VSCode）
+
+このプロジェクトは、Visual Studio Code 上で Django プロジェクトの作成・起動・管理を効率化するための設定ファイルとスクリプト群を提供します。
+仮想環境の起動から Django サーバーの操作、Chrome での表示までを一貫して行えるように設計されています。
+
+---
+
+## 構成ファイル一覧
+
+### `.vscode/launch.json`
+
+VSCode のデバッグ構成を定義しています。以下のような操作が可能です：
+
+- 仮想環境の起動・停止
+- Django プロジェクトの起動
+- アプリケーションの作成
+- マイグレーションの実行
+- Chrome での Web アプリ表示
+- Django 管理サイトへのアクセス
+
+#### 主な構成項目
+
+| 名前 | 説明 |
+|------|------|
+| `1:仮想環境起動` | PowerShell で仮想環境を起動 |
+| `2:プロジェクト起動` | Django サーバーを起動（manage.py を自動選択） |
+| `2.1:選択プロジェクトリセット` | 前回選択した manage.py をリセット |
+| `3:Chrome起動` | Web アプリを Chrome で表示 |
+| `4:プロジェクト作成` | Django プロジェクトを新規作成 |
+| `5:アプリケーション作成` | Django アプリケーションを作成 |
+| `6〜8` | マイグレーション関連操作 |
+| `9:モデル作成` | DB からモデルを自動生成 |
+| `10:Django管理サイト` | 管理画面を Chrome で表示 |
+| `11:仮想環境停止` | PowerShell で仮想環境を停止 |
+
+---
+
+### `.vscode/tasks.json`
+
+複数のタスクを定義し、launch.json の構成と連携して動作します。
+
+#### 主なタスク
+
+- `StartChrome and CloseTerminal`: Chrome を起動し、ターミナルを閉じる
+- `Select Project`: プロジェクト一覧を更新し、launch.json に反映
+- `StopServer`: Django サーバー停止用のタスク
+- `Update Project List`: プロジェクト一覧を apps.json に保存
+- `Update launch.json`: apps.json を元に launch.json を更新
+
+---
+
+## スクリプト群
+
+### `generate_inputs.py`
+
+- プロジェクトルートに存在する Django プロジェクトを検出
+- `.vscode/debugpy/apps.json` に保存
+
+### `update_launch.py`
+
+- `apps.json` の内容を `launch.json` の `inputs.selectProject.options` に反映
+
+### `vscode_manage.py`
+
+- 複数の Django プロジェクトが存在する場合に、使用する `manage.py` を選択・記憶・実行
+- `--reset` オプションで記憶されたプロジェクト選択をリセット可能
+
+### `vscode_manage_config.json`
+
+- 最後に使用した `manage.py` のパスを記憶する設定ファイル
+
+### `auto_restart.py`
+
+- `.py` ファイルの変更を監視し、自動的に Django サーバーを再起動
+
+---
+
+## 補足ファイル
+
+### `.vscode/url.txt`
+
+Django サーバーの起動後にアクセスする URL を記述したファイル。
+`tasks.json` の `Open URL in Chrome` タスクで使用されます。
+
+内容例：
+``
+```
+http://127.0.0.1:8000/
+```
+
+### `プロキシ設定.bat`
+
+社内ネットワークなどで Git のプロキシ設定が必要な場合に使用します。
+
+```bat
+git config --global http.proxy http://192.168.200.102:8080
+git config --global https.proxy http://192.168.200.102:8080
+echo Git proxy has been set.
+```
+
+### `プロキシ設定解除.bat`
+
+Git のプロキシ設定を解除するバッチファイルです。
+
+```bat
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+echo Git proxy has been removed.
+```
+
+---
+
+## 使用方法
+
+実行とデバッグに項目として表示されています。
+
+---
+
+## 注意事項
+
+- Windows 環境を前提とした設定になっています（Chrome のパス、PowerShell、.bat ファイルなど）
+- `.vscode` フォルダ内のスクリプトは Python で動作します
+- 仮想環境は `djangovm` フォルダに配置されていることを前提としています
+- `apps.json` や `vscode_manage_config.json` は自動生成されるため、手動編集は不要です

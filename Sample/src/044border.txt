@@ -1,0 +1,17 @@
+<div class="d-flex mt-2">
+	<div class="border rounded border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-top border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-bottom border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-start border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-end border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-circle border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-pill border-primary border-2 me-2" style="width:60px;height:50px;"></div>
+</div>
+<div class="d-flex mt-2">
+	<div class="border rounded-0 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-1 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-2 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-3 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-4 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+	<div class="border rounded-5 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+</div>

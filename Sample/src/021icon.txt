@@ -1,0 +1,42 @@
+※ <head>タグの中に以下のCDNを登録した上で使用します。
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+
+<div class="row mt-1">
+	<div class="col border text-primary">
+		<i class="bi bi-0-circle"></i>
+	</div>
+	<div class="col border text-bg-primary">
+		<i class="bi bi-0-circle-fill"></i>
+	</div>
+	<div class="col border text-secondary">
+		<i class="bi bi-0-square"></i>
+	</div>
+	<div class="col border text-bg-secondary">
+		<i class="bi bi-0-square-fill"></i>
+	</div>
+	<div class="col border text-success">
+		<i class="bi bi-arrow-counterclockwise"></i>
+	</div>
+	<div class="col border text-bg-success">
+		<i class="bi bi-arrow-return-left"></i>
+	</div>
+	<div class="col border text-danger">
+		<i class="bi bi-bluetooth"></i>
+	</div>
+	<div class="col border text-bg-danger">
+		<i class="bi bi-calendar2"></i>
+	</div>
+	<div class="col border text-warning">
+		<i class="bi bi-camera-fill"></i>
+	</div>
+	<div class="col border text-bg-warning">
+		<i class="bi bi-caret-right-square"></i>
+	</div>
+	<div class="col border text-info">
+		<i class="bi bi-chat-left-dots-fill"></i>
+	</div>
+	<div class="col border text-bg-info">
+		<i class="bi bi-cloud-check"></i>
+	</div>
+</div>

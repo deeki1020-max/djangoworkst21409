@@ -1,0 +1,110 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CloseTerminal",
+            "type": "shell",
+            "command": "exit", // ターミナルを閉じるコマンド
+            "presentation": {
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clear",
+            "type": "shell",
+            "command": "clear",
+            // "options": {
+            //   "shell": {
+            //     "executable": "${env:windir}\\system32\\cmd.exe",
+            //     "args": ["/C"]
+            //   }
+            // }
+        },
+        {
+            "label": "Sleepdelay",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "Start-Sleep -Seconds 3"
+            ],
+            "problemMatcher": []
+            // "command": "sleep",
+            // "windows": {
+            //   "command": "Start-Sleep -Seconds 6" //"ping 127.0.0.1 -n 6 > nul"
+            // },
+            // "group": "none",
+            // "presentation": {
+            //   "reveal": "silent",
+            //   "panel": "new"
+            // }
+        },
+        {
+            "label": "StopServer",
+            "command": "echo ${input:terminate}",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "Open URL in Chrome",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "-c",
+                "import webbrowser; webbrowser.register('chrome', None, webbrowser.BackgroundBrowser('C:/Program Files/Google/Chrome/Application/chrome.exe')); f = open('${workspaceFolder}/.vscode/url.txt'); url = f.read(); f.close(); webbrowser.get('chrome').open(url)"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "StartChrome and CloseTerminal",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Open URL in Chrome",
+                "CloseTerminal"
+            ]
+        },
+        {
+            "label": "Update Project List",
+            "type": "shell",
+            "command": "${workspaceFolder}/djangovm/Scripts/python.exe",
+            "args": [
+                ".vscode/debugpy/generate_inputs.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Update launch.json",
+            "type": "shell",
+            "command": "${workspaceFolder}/djangovm/Scripts/python.exe",
+            "args": [
+                ".vscode/debugpy/update_launch.py"
+            ],
+            "dependsOn": [
+                "Update Project List"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Select Project",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Update Project List",
+                "Update launch.json"
+            ]
+        },
+    ],
+    "inputs": [
+        {
+            "id": "terminate",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "terminateAll"
+        }
+    ]
+}

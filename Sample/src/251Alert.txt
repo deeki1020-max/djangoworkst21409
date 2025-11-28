@@ -1,0 +1,32 @@
+<div class="alert alert-primary d-flex justify-content-between" role="alert">
+	プライマリー色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-secondary d-flex justify-content-between" role="alert">
+	セカンダリー色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-success d-flex justify-content-between" role="alert">
+	成功色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-danger d-flex justify-content-between" role="alert">
+	危険色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-warning d-flex justify-content-between" role="alert">
+	警告色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-info d-flex justify-content-between" role="alert">
+	情報色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-light d-flex justify-content-between" role="alert">
+	ライト色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="alert alert-dark d-flex justify-content-between" role="alert">
+	ダーク色Alert
+	<button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

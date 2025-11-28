@@ -1,0 +1,10 @@
+<div class="display-6 fw-bold">太字の例</div>
+<div class="display-6 text-decoration-line-through">取り消し線の例</div>
+<div class="d-flex">
+	<div class="fs-1 text-primary text-opacity-75">透明度75</div>
+	<div class="fs-1 text-primary text-opacity-50">透明度50</div>
+	<div class="fs-1 text-primary text-opacity-25">透明度25</div>
+</div>
+<div class="display-6 text-start">左寄せ</div>
+<div class="display-6 text-center">中央寄せ</div>
+<div class="display-6 text-end">右寄せ</div>

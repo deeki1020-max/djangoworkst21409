@@ -1,0 +1,61 @@
+<!-- ツールチップの色を変えるときはCSSが必要 -->
+<style>
+  .primary-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+  }
+  .secondary-tooltip {
+    --bs-tooltip-bg: var(--bs-secondary);
+  }
+  .success-tooltip {
+    --bs-tooltip-bg: var(--bs-success);
+  }
+  .danger-tooltip {
+    --bs-tooltip-bg: var(--bs-danger);
+  }
+  .warning-tooltip {
+    --bs-tooltip-bg: var(--bs-warning);
+  }
+  .info-tooltip {
+    --bs-tooltip-bg: var(--bs-info);
+  }
+  .dark-tooltip {
+    --bs-tooltip-bg: var(--bs-dark);
+  }
+</style>
+
+<!-- スタイルの適用はdata-bs-custom-class属性 -->
+<div class="d-flex">
+  <p class="muted me-2 mt-2">リンクに<a href="#tooltips" data-bs-toggle="tooltip"
+      data-bs-title="リンクの説明">Tooltips</a>
+  </p>
+
+  <button type="button" class="btn btn-success me-2 btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
+    data-bs-title="上" data-bs-custom-class="primary-tooltip">
+    上に表示
+  </button>
+  <button type="button" class="btn btn-dark me-2 btn-sm" data-bs-toggle="tooltip" data-bs-placement="bottom"
+    data-bs-title="下" data-bs-custom-class="success-tooltip">
+    下に表示
+  </button>
+  <button type="button" class="btn btn-outline-success me-2 btn-sm" data-bs-toggle="tooltip"
+    data-bs-placement="left" data-bs-title="左" data-bs-custom-class="danger-tooltip">
+    左に表示
+  </button>
+  <button type="button" class="btn btn-outline-dark me-2 btn-sm" data-bs-toggle="tooltip"
+    data-bs-placement="right" data-bs-title="右" data-bs-custom-class="warning-tooltip">
+    右に表示
+  </button>
+  <img src="img/forest.jpg" class="w-25 rounded" alt="forest" id="exampleimg2" data-bs-toggle="tooltip"
+    data-bs-title="森" data-bs-custom-class="info-tooltip" />
+</div>
+
+<!--  bodyタグ最後にJavaScriptが必要です。-->
+<script>
+  // ツールチップの初期化
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
+</script>

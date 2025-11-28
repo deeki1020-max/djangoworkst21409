@@ -1,0 +1,1 @@
+<h1>見出し <span class="badge bg-info">New</span></h1>

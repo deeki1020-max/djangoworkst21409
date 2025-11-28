@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- 以下のmetaタグは入れること レスポンシブWebデザインで必要（様々なデバイスに対応するWebを作成すること） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap サンプル</title>
+    <!-- 以下のリンクがBootstrapのCDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- 以下のリンクがBootstrap公式アイコンのCDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prism.jsのスタイル -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <!-- 行番号を表示するプラグインのスタイル -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+
+    <!-- スタイルシートの適用 -->
+    <link rel="stylesheet" href="./css/styele.css">
+
+    <!-- ここの設定はツールチップ用 -->
+    <style>
+        .primary-tooltip {
+            --bs-tooltip-bg: var(--bs-primary);
+        }
+
+        .secondary-tooltip {
+            --bs-tooltip-bg: var(--bs-secondary);
+        }
+
+        .success-tooltip {
+            --bs-tooltip-bg: var(--bs-success);
+        }
+
+        .danger-tooltip {
+            --bs-tooltip-bg: var(--bs-danger);
+        }
+
+        .warning-tooltip {
+            --bs-tooltip-bg: var(--bs-warning);
+        }
+
+        .info-tooltip {
+            --bs-tooltip-bg: var(--bs-info);
+        }
+
+        .dark-tooltip {
+            --bs-tooltip-bg: var(--bs-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fixed-top bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="img/bootstrap-logo.svg" alt="Bootstrap Logo" width="10%" height="10%" />
+                <div class="display-2 text-center text-primary ms-3">
+                    Bootstrap サンプル
+                </div>
+            </div>
+            <hr />
+            <!-- ページ内リンク -->
+            <div class="d-flex justify-content-center align-items-center">
+                <h6 class="me-1 mt-1">ページ内リンク</h6>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a class="btn btn-outline-info btn-sm" href="#grid" data-bs-toggle="tooltip" title="グリッドシステム">①</a>
+                    <a class="btn btn-outline-info btn-sm" href="#icon" data-bs-toggle="tooltip" title="アイコン">②</a>
+                    <a class="btn btn-outline-info btn-sm" href="#fontstyle" data-bs-toggle="tooltip" title="文字装飾">③</a>
+                    <a class="btn btn-outline-info btn-sm" href="#border" data-bs-toggle="tooltip" title="境界線と色">④</a>
+                    <a class="btn btn-outline-info btn-sm" href="#horizontal" data-bs-toggle="tooltip" title="水平線">⑤</a>
+                    <a class="btn btn-outline-info btn-sm" href="#table" data-bs-toggle="tooltip" title="テーブル">⑥</a>
+                    <a class="btn btn-outline-info btn-sm" href="#btn" data-bs-toggle="tooltip" title="ボタン">⑦</a>
+                    <a class="btn btn-outline-info btn-sm" href="#textbox" data-bs-toggle="tooltip"
+                        title="テキストボックス">⑧</a>
+                    <a class="btn btn-outline-info btn-sm" href="#list" data-bs-toggle="tooltip" title="リスト">⑨</a>
+                    <a class="btn btn-outline-info btn-sm" href="#floating" data-bs-toggle="tooltip"
+                        title="フローティングラベル">⑩</a>
+                    <a class="btn btn-outline-info btn-sm" href="#radio" data-bs-toggle="tooltip" title="ラジオボタン">⑪</a>
+                    <a class="btn btn-outline-info btn-sm" href="#check" data-bs-toggle="tooltip" title="チェックボックス">⑫</a>
+                    <a class="btn btn-outline-info btn-sm" href="#file" data-bs-toggle="tooltip"
+                        title="ファイルアップロード">⑬</a>
+                    <a class="btn btn-outline-info btn-sm" href="#color" data-bs-toggle="tooltip" title="カラー選択">⑭</a>
+                    <a class="btn btn-outline-info btn-sm" href="#slider" data-bs-toggle="tooltip" title="スライダー">⑮</a>
+                    <a class="btn btn-outline-info btn-sm" href="#date" data-bs-toggle="tooltip" title="日付選択">⑯</a>
+                    <a class="btn btn-outline-info btn-sm" href="#page" data-bs-toggle="tooltip" title="ページネーション">⑰</a>
+                    <a class="btn btn-outline-info btn-sm" href="#badges" data-bs-toggle="tooltip" title="バッジ">⑱</a>
+                    <a class="btn btn-outline-info btn-sm" href="#progress" data-bs-toggle="tooltip"
+                        title="プログレスバー">⑲</a>
+                    <a class="btn btn-outline-info btn-sm" href="#spinner" data-bs-toggle="tooltip" title="スピナー">⑳</a>
+                    <a class="btn btn-outline-info btn-sm" href="#img" data-bs-toggle="tooltip" title="イメージ">㉑</a>
+                    <a class="btn btn-outline-info btn-sm" href="#popover" data-bs-toggle="tooltip"
+                        title="PopOver">㉒</a>
+                    <a class="btn btn-outline-info btn-sm" href="#toasts" data-bs-toggle="tooltip" title="Toasts">㉓</a>
+                    <a class="btn btn-outline-info btn-sm" href="#tooltips" data-bs-toggle="tooltip"
+                        title="Tooltips">㉔</a>
+                    <a class="btn btn-outline-info btn-sm" href="#alert" data-bs-toggle="tooltip" title="Alert">㉕</a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bootstrapを使ったWebデザインサンプル -->
+        <div class="container mt-5 ptop">
+            <h4 class="me-5 mt-2">このサンプルは・・・</h4>
+            <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                <h6>Bootstrapを使ったデザインのサンプルとソースがあります。詳しくは公式サイトを確認してください。</h6>
+                <a href="https://getbootstrap.jp/" class="link-info fs-1 text-center">
+                    <img src="img/bootstrap-logo.svg" alt="Bootstrap Logo" width="50" height="50" />
+                    Bootstrapの公式サイトへジャンプ
+                </a>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⓪Bootstrapを使うための設定 -->
+        <div class="container mt-5">
+            <div class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⓪Bootstrapを使うためにはCDN経由で取り込みます</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/getting-started/introduction/#cdn%e3%83%aa%e3%83%b3%e3%82%af"
+                    class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> CDNのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget001')" data-target="copyTarget001">
+                            <div class="text-info d-flex">
+                                <i id="clipicon001" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target001" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget001"
+                            class="line-numbers"><code id="sourceCode001" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ①グリッドシステム -->
+        <div class="container mt-5">
+            <div id="grid" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">①グリッドシステム</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/layout/grid/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> グリッドシステムのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="row bg-warning">
+                    <div class="col border">1</div>
+                    <div class="col border">2</div>
+                    <div class="col border">3</div>
+                    <div class="col border">4</div>
+                    <div class="col border">5</div>
+                    <div class="col border">6</div>
+                    <div class="col border">7</div>
+                    <div class="col border">8</div>
+                    <div class="col border">9</div>
+                    <div class="col border">10</div>
+                    <div class="col border">11</div>
+                    <div class="col border">12</div>
+                </div>
+                <div class="row">
+                    <div class="col-1 border">1</div>
+                    <div class="col-2 border">23</div>
+                    <div class="col-3 border">456</div>
+                    <div class="col-4 border">78910</div>
+                </div>
+
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target011">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget011')" data-target="copyTarget011">
+                            <div class="text-info d-flex">
+                                <i id="clipicon011" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target011" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget011"
+                            class="line-numbers"><code id="sourceCode011" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ②アイコン -->
+        <div class="container mt-5">
+            <div id="icon" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">②アイコン</h4>
+                <a href="https://icons.getbootstrap.jp/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのアイコンリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="row mt-1">
+                    <div class="col border text-primary">
+                        <i class="bi bi-0-circle"></i>
+                    </div>
+                    <div class="col border text-bg-primary">
+                        <i class="bi bi-0-circle-fill"></i>
+                    </div>
+                    <div class="col border text-secondary">
+                        <i class="bi bi-0-square"></i>
+                    </div>
+                    <div class="col border text-bg-secondary">
+                        <i class="bi bi-0-square-fill"></i>
+                    </div>
+                    <div class="col border text-success">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                    </div>
+                    <div class="col border text-bg-success">
+                        <i class="bi bi-arrow-return-left"></i>
+                    </div>
+                    <div class="col border text-danger">
+                        <i class="bi bi-bluetooth"></i>
+                    </div>
+                    <div class="col border text-bg-danger">
+                        <i class="bi bi-calendar2"></i>
+                    </div>
+                    <div class="col border text-warning">
+                        <i class="bi bi-camera-fill"></i>
+                    </div>
+                    <div class="col border text-bg-warning">
+                        <i class="bi bi-caret-right-square"></i>
+                    </div>
+                    <div class="col border text-info">
+                        <i class="bi bi-chat-left-dots-fill"></i>
+                    </div>
+                    <div class="col border text-bg-info">
+                        <i class="bi bi-cloud-check"></i>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target021">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget021')" data-target="copyTarget021">
+                            <div class="text-info d-flex">
+                                <i id="clipicon021" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target021" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget021"
+                            class="line-numbers"><code id="sourceCode021" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ③文字装飾 -->
+        <div class="container mt-5 pbottom">
+            <div id="fontstyle" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">③文字装飾</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/utilities/display/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapの文字装飾リンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="display-1">display-1</div>
+                <div class="display-2">display-2</div>
+                <div class="display-3">display-3</div>
+                <div class="display-4">display-4</div>
+                <div class="display-5">display-5</div>
+                <div class="display-6">display-6</div>
+                <div class="fs-1">fs-1</div>
+                <div class="fs-2">fs-2</div>
+                <div class="fs-3">fs-3</div>
+                <div class="fs-4">fs-4</div>
+                <div class="fs-5">fs-5</div>
+                <div class="fs-6">fs-6</div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target031">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget031')" data-target="copyTarget031">
+                            <div class="text-info d-flex">
+                                <i id="clipicon031" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target031" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget031"
+                            class="line-numbers"><code id="sourceCode031" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="polaroid mt-3">
+                <div class="display-6 text-primary">text-primary</div>
+                <div class="display-6 text-secondary">text-secondary</div>
+                <div class="display-6 text-success">text-success</div>
+                <div class="display-6 text-danger">text-danger</div>
+                <div class="display-6 text-warning">text-warning</div>
+                <div class="display-6 text-info">text-info</div>
+                <div class="fs-2 text-primary-emphasis">text-primary-emphasis</div>
+                <div class="fs-2 text-secondary-emphasis">text-secondary-emphasis</div>
+                <div class="fs-2 text-success-emphasis">text-success-emphasis</div>
+                <div class="fs-2 text-danger-emphasis">text-danger-emphasis</div>
+                <div class="fs-2 text-warning-emphasis">text-warning-emphasis</div>
+                <div class="fs-2 text-info-emphasis">text-info-emphasis</div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target032">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget032')" data-target="copyTarget032">
+                            <div class="text-info d-flex">
+                                <i id="clipicon032" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target032" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget032"
+                            class="line-numbers"><code id="sourceCode032" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="polaroid mt-3">
+                <div class="display-6 fw-bold">太字の例</div>
+                <div class="display-6 text-decoration-line-through">取り消し線の例</div>
+                <div class="d-flex">
+                    <div class="fs-1 text-primary text-opacity-75">透明度75</div>
+                    <div class="fs-1 text-primary text-opacity-50">透明度50</div>
+                    <div class="fs-1 text-primary text-opacity-25">透明度25</div>
+                </div>
+                <div class="display-6 text-start">左寄せ</div>
+                <div class="display-6 text-center">中央寄せ</div>
+                <div class="display-6 text-end">右寄せ</div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target033">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget033')" data-target="copyTarget033">
+                            <div class="text-info d-flex">
+                                <i id="clipicon033" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target033" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget033"
+                            class="line-numbers"><code id="sourceCode033" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ④境界線と色 -->
+        <div class="container mt-5 pbottom">
+            <div id="border" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">④境界線と色</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/utilities/borders/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapボーダー表示リンク
+                </a>
+                <a href="https://getbootstrap.jp/docs/5.3/customize/color/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrap色表示リンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex">
+                    <div class="border border-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border-top border-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border-end border-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border-bottom border-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border-start border-primary" style="width:50px;height:50px;"></div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div class="border border-top-0 me-2 border-primary" style="width:50px;height:50px;"></div>
+                    <div class="border border-end-0 me-2 border-primary" style="width:50px;height:50px;"></div>
+                    <div class="border border-bottom-0 me-2 border-primary" style="width:50px;height:50px;"></div>
+                    <div class="border border-start-0 me-2 border-primary" style="width:50px;height:50px;"></div>
+                    <div class="border border-top-0 border-bottom-0 me-2 border-primary"
+                        style="width:50px;height:50px;"></div>
+                    <div class="border border-start-0 border-end-0 me-2 border-primary" style="width:50px;height:50px;">
+                    </div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div class="border border-primary border-1 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-primary border-3 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-primary border-4 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-primary border-5 me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target041">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget041')" data-target="copyTarget041">
+                            <div class="text-info d-flex">
+                                <i id="clipicon041" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target041" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget041"
+                            class="line-numbers"><code id="sourceCode041" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex mt-2">
+                    <div class="border border-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-secondary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-success me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-danger me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-warning me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-info me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-light me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-dark me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div class="border border-primary-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-secondary-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-success-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-danger-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-warning-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-info-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-light-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border border-dark-subtle me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target042">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget042')" data-target="copyTarget042">
+                            <div class="text-info d-flex">
+                                <i id="clipicon042" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target042" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget042"
+                            class="line-numbers"><code id="sourceCode042" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex mt-2">
+                    <div class="border bg-primary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-secondary me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-success me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-danger me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-warning me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-info me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-light me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-dark me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div class="border bg-primary-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-secondary-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-success-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-danger-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-warning-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-info-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-light-subtle me-2" style="width:50px;height:50px;"></div>
+                    <div class="border bg-dark-subtle me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target043">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget043')" data-target="copyTarget043">
+                            <div class="text-info d-flex">
+                                <i id="clipicon043" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target043" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget043"
+                            class="line-numbers"><code id="sourceCode043" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex mt-2">
+                    <div class="border rounded border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-top border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-bottom border-primary border-2 me-2" style="width:50px;height:50px;">
+                    </div>
+                    <div class="border rounded-start border-primary border-2 me-2" style="width:50px;height:50px;">
+                    </div>
+                    <div class="border rounded-end border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-circle border-primary border-2 me-2" style="width:50px;height:50px;">
+                    </div>
+                    <div class="border rounded-pill border-primary border-2 me-2" style="width:60px;height:50px;"></div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div class="border rounded-0 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-1 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-2 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-3 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-4 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                    <div class="border rounded-5 border-primary border-2 me-2" style="width:50px;height:50px;"></div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target044">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget044')" data-target="copyTarget044">
+                            <div class="text-info d-flex">
+                                <i id="clipicon044" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target044" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget044"
+                            class="line-numbers"><code id="sourceCode044" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑤水平線 -->
+        <div class="container mt-5 pbottom">
+            <div id="horizontal" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑤水平線</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/utilities/borders/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのボーダーリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <hr class="border border-primary" />
+                <hr class="border border-secondary" />
+                <hr class="border border-success" />
+                <hr class="border border-danger" />
+                <hr class="border border-warning" />
+                <hr class="border border-info" />
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target051">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget051')" data-target="copyTarget051">
+                            <div class="text-info d-flex">
+                                <i id="clipicon051" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target051" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget051"
+                            class="line-numbers"><code id="sourceCode051" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑥テーブル -->
+        <div class="container mt-5 pbottom">
+            <div id="table" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑥テーブル</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/content/tables/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのテーブルリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered border-primary table-hover">
+                        <thead>
+                            <tr>
+                                <th>タイトル１</th>
+                                <th>タイトル２</th>
+                                <th>タイトル３</th>
+                                <th>タイトル４</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">項目１１</td>
+                                <td>項目１２</td>
+                                <td>項目１３</td>
+                                <td>項目１４</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">項目２１</td>
+                                <td>項目２２</td>
+                                <td>項目２３</td>
+                                <td>項目２４</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">項目３１</td>
+                                <td>項目３２</td>
+                                <td>項目３３</td>
+                                <td>項目３４</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target061">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget061')" data-target="copyTarget061">
+                            <div class="text-info d-flex">
+                                <i id="clipicon061" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target061" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget061"
+                            class="line-numbers"><code id="sourceCode061" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="table-responsive mt-1">
+                    <table class="table table-striped-columns table-info table-hover">
+                        <thead>
+                            <tr>
+                                <th>タイトル１</th>
+                                <th>タイトル２</th>
+                                <th>タイトル３</th>
+                                <th>タイトル４</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">項目１１</td>
+                                <td>項目１２</td>
+                                <td>項目１３</td>
+                                <td>項目１４</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">項目２１</td>
+                                <td>項目２２</td>
+                                <td>項目２３</td>
+                                <td>項目２４</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">項目３１</td>
+                                <td>項目３２</td>
+                                <td>項目３３</td>
+                                <td>項目３４</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target062">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget062')" data-target="copyTarget062">
+                            <div class="text-info d-flex">
+                                <i id="clipicon062" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target062" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget062"
+                            class="line-numbers"><code id="sourceCode062" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑦ボタン -->
+        <div class="container mt-5">
+            <div id="btn" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑦ボタン</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/buttons/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのボタンリンク
+                </a>
+                <a href="https://getbootstrap.jp/docs/5.3/components/button-group/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのボタングループリンク
+                </a>
+
+            </div>
+            <div class="polaroid">
+                <div class="row">
+                    <div class="col d-flex align-items-center">
+                        <button class="btn btn-primary">プライマリーボタン</button>
+                        <button class="btn btn-secondary">セカンダリーボタン</button>
+                        <button class="btn btn-success">成功ボタン</button>
+                        <button class="btn btn-danger">危険ボタン</button>
+                        <button class="btn btn-warning">警告ボタン</button>
+                        <button class="btn btn-info">情報ボタン</button>
+                        <button class="btn btn-light">ライトボタン</button>
+                        <button class="btn btn-dark">ダークボタン</button>
+                        <button class="btn btn-link">リンクボタン</button>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target071">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget071')" data-target="copyTarget071">
+                            <div class="text-info d-flex">
+                                <i id="clipicon071" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target071" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget071"
+                            class="line-numbers"><code id="sourceCode071" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="row d-flex mt-1">
+                    <!-- ⑦ボタン -->
+                    <div class="col d-flex align-items-center">
+                        <button class="btn btn-outline-primary">
+                            プライマリーボタン
+                        </button>
+                        <button class="btn btn-outline-secondary">
+                            セカンダリーボタン
+                        </button>
+                        <button class="btn btn-outline-success">成功ボタン</button>
+                        <button class="btn btn-outline-danger">危険ボタン</button>
+                        <button class="btn btn-outline-warning">警告ボタン</button>
+                        <button class="btn btn-outline-info">情報ボタン</button>
+                        <button class="btn btn-outline-light">ライトボタン</button>
+                        <button class="btn btn-outline-dark">ダークボタン</button>
+                        <button class="btn btn-outline-link">リンクボタン</button>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target072">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget072')" data-target="copyTarget072">
+                            <div class="text-info d-flex">
+                                <i id="clipicon072" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target072" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget072" class="line-numbers"><code id="sourceCode072" class="language-html"></code>
+                </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="row">
+                    <!-- ⑦ボタン -->
+                    <div class="col d-flex align-items-center">
+                        <div class="list-group list-group-horizontal mt-2 mb-2">
+                            <a href="#" class="list-group-item list-group-item-action">デフォルト</a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action list-group-item-primary">プライマリー</a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action list-group-item-secondary">セカンダリー</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">成功</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-danger">危険</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">警告</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-info">情報</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-light">ライト</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">ダーク</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target073">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget073')" data-target="copyTarget073">
+                            <div class="text-info d-flex">
+                                <i id="clipicon073" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target073" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget073"
+                            class="line-numbers"><code id="sourceCode073" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑧テキストボックス -->
+        <div class="container mt-5 pbottom">
+            <div id="textbox" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑧テキストボックス</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/form-control/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのフォームコントロールリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <form>
+                    <div class="form-group">
+                        <div class="d-flex align-items-center">
+                            <label for="exampleInputEmail1" class="col-2">メールアドレス</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="メールアドレスを入力" />
+                            <small id="emailHelp" class="form-text text-muted col-5">
+                                このメールアドレスは他の人には公開されません。
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex align-items-center">
+                            <label for="exampleInputPassword1" class="col-2">パスワード</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="パスワードを入力" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex align-items-center">
+                            <label for="exampleInputText" class="col-2">テキストボックス</label>
+                            <input type="text" class="form-control" id="exampleInputText" placeholder="テキストを入力" />
+                        </div>
+                    </div>
+                </form>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target081">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget081')" data-target="copyTarget081">
+                            <div class="text-info d-flex">
+                                <i id="clipicon081" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target081" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget081"
+                            class="line-numbers"><code id="sourceCode081" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑨リスト -->
+        <div class="container mt-5 pbottom">
+            <div id="list" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑨リスト</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/list-group/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのリストリンク
+                    <a href="https://getbootstrap.jp/docs/5.3/components/dropdowns/" class="link-primary fs-5 ms-auto">
+                        <i class="bi bi-star text-info"></i> Bootstrapのドロップダウンリンク
+                    </a>
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex align-items-center">
+                    <label for="exampleInputText" class="col-2">リスト</label>
+                    <select class="form-select">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target091">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget091')" data-target="copyTarget091">
+                            <div class="text-info d-flex">
+                                <i id="clipicon091" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target091" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget091"
+                            class="line-numbers"><code id="sourceCode091" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex align-items-center">
+                    <label for="exampleInputText" class="col-2">水平リスト</label>
+                    <ul class="list-group list-group-horizontal mt-2 mb-2">
+                        <li class="list-group-item">デフォルト</li>
+                        <li class="list-group-item list-group-item-primary">
+                            プライマリー
+                        </li>
+                        <li class="list-group-item list-group-item-secondary">
+                            セカンダリー
+                        </li>
+                        <li class="list-group-item list-group-item-success">成功</li>
+                        <li class="list-group-item list-group-item-danger">危険</li>
+                        <li class="list-group-item list-group-item-warning">警告</li>
+                        <li class="list-group-item list-group-item-info">情報</li>
+                        <li class="list-group-item list-group-item-light">ライト</li>
+                        <li class="list-group-item list-group-item-dark">ダーク</li>
+                    </ul>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target092">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget092')" data-target="copyTarget092">
+                            <div class="text-info d-flex">
+                                <i id="clipicon092" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target092" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget092"
+                            class="line-numbers"><code id="sourceCode092" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="dropdown">
+                    <div class="d-flex align-items-center">
+                        <label for="exampleInputText" class="col-3">ドロップダウンリスト</label>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Menu#1</a></li>
+                            <li><a class="dropdown-item" href="#">Menu#2</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#">Menu#3</a></li>
+                        </ul>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger ms-2">Menu</button>
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">トグル Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Menu1</a></li>
+                                <li><a class="dropdown-item" href="#">Menu2</a></li>
+                                <li><a class="dropdown-item" href="#">Menu3</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">セパレートリンク</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target093">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget093')" data-target="copyTarget093">
+                            <div class="text-info d-flex">
+                                <i id="clipicon093" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target093" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget093"
+                            class="line-numbers"><code id="sourceCode093" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex align-items-center mt-2">
+                    <label for="examplecheck" class="col-2">チェックボックス</label>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" />
+                            <label class="form-check-label" for="firstCheckbox">１つ</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox" />
+                            <label class="form-check-label" for="secondCheckbox">２つ</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox" />
+                            <label class="form-check-label" for="thirdCheckbox">３つ</label>
+                        </li>
+                    </ul>
+                    <label for="exampleradio" class="col-2 ms-5">ラジオボタン</label>
+                    <ul class="list-group ms-2">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="firstRadio" checked />
+                            <label class="form-check-label" for="firstRadio">１つ目</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="secondRadio" />
+                            <label class="form-check-label" for="secondRadio">２つ目</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="thirdRadio" />
+                            <label class="form-check-label" for="thirdRadio">３つ目</label>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target094">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget094')" data-target="copyTarget094">
+                            <div class="text-info d-flex">
+                                <i id="clipicon094" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target094" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget094"
+                            class="line-numbers"><code id="sourceCode094" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑩フローティングラベル -->
+        <div class="container mt-5 pbottom">
+            <div id="floating" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑩フローティングラベル</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/floating-labels/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのフローティングラベルリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control is-valid" id="floatingInputInvalid"
+                        placeholder="name@example.com" value="test@example.com" />
+                    <label for="floatingInputInvalid">ここに説明書き</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control is-invalid" id="floatingInputInvalid"
+                        placeholder="name@example.com" value="test@example.com" />
+                    <label for="floatingInputInvalid">ここに説明書き</label>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target101">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget101')" data-target="copyTarget101">
+                            <div class="text-info d-flex">
+                                <i id="clipicon101" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target101" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget101"
+                            class="line-numbers"><code id="sourceCode101" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑪ラジオボタン -->
+        <div class="container mt-5">
+            <div id="radio" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑪ラジオボタン</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/checks-radios/#%e3%83%a9%e3%82%b8%e3%82%aa"
+                    class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのラジオボタンリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <form>
+                    <fieldset class="form-group">
+                        <!-- formタグで定義するフォームの入力項目をグループ化するためのタグです。
+          グループ化を行うことにより、グループの間をtabキーで簡単に移動することが可能 -->
+                        <div class="d-flex">
+                            <!-- 横並び -->
+                            <div class="form-check flex-grow-1">
+                                <!-- flex-grow-1 は間隔広げる -->
+                                <input class="form-check-input" type="radio" name="fruit" id="radio1" value="apple" />
+                                <label class="form-check-label" for="radio1">ラジオ１</label>
+                            </div>
+                            <div class="form-check flex-grow-1">
+                                <input class="form-check-input" type="radio" name="fruit" id="radio2" value="banana" />
+                                <label class="form-check-label" for="radio2">ラジオ２</label>
+                            </div>
+                            <div class="form-check flex-grow-1">
+                                <input class="form-check-input" type="radio" name="fruit" id="radio3" value="orange" />
+                                <label class="form-check-label" for="radio3">ラジオ３</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target111">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget111')" data-target="copyTarget111">
+                            <div class="text-info d-flex">
+                                <i id="clipicon111" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target111" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget111"
+                            class="line-numbers"><code id="sourceCode111" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑫チェックボックス -->
+        <div class="container mt-5">
+            <div id="check" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑫チェックボックス</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/checks-radios/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのチェックボックスリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <form>
+                    <fieldset class="form-group">
+                        <div class="d-flex">
+                            <div class="form-check flex-grow-1">
+                                <input class="form-check-input" type="checkbox" id="check1" value="chocolate" />
+                                <label class="form-check-label" for="check1">チェック１</label>
+                            </div>
+                            <div class="form-check flex-grow-1">
+                                <input class="form-check-input" type="checkbox" id="check2" value="whippedCream" />
+                                <label class="form-check-label" for="check2">チェック２</label>
+                            </div>
+                            <div class="form-check flex-grow-1">
+                                <input class="form-check-input" type="checkbox" id="check3" value="nuts" />
+                                <label class="form-check-label" for="check3">チェック３</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target121">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget121')" data-target="copyTarget121">
+                            <div class="text-info d-flex">
+                                <i id="clipicon121" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target121" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget121"
+                            class="line-numbers"><code id="sourceCode121" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑬ファイルアップロード -->
+        <div class="container mt-5 pbottom">
+            <div id="file" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑬ファイルアップロード</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/form-control/#%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%85%a5%e5%8a%9b"
+                    class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのファイル選択リンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="form-group">
+                    <div class="d-flex align-items-center">
+                        <label for="fileInput" class="col-1 me-3">選択</label>
+                        <input type="file" class="form-control flex-grow-1" id="fileInput"
+                            aria-describedby="fileHelp" />
+                    </div>
+                    <small id="fileHelp" class="form-text text-muted">画像やドキュメントをアップロードできます。</small>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target131">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget131')" data-target="copyTarget131">
+                            <div class="text-info d-flex">
+                                <i id="clipicon131" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target131" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget131"
+                            class="line-numbers"><code id="sourceCode131" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑭カラー -->
+        <div class="container mt-5 pbottom">
+            <div id="color" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑭カラー選択</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/form-control/#%E3%82%AB%E3%83%A9%E3%83%BC"
+                    class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのカラー選択リンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="form-group">
+                    <div class="d-flex align-items-center">
+                        <label for="colorInput" class="col-1 me-3">選択</label>
+                        <input type="color" class="form-control" id="colorInput" value="#ff0000"
+                            aria-describedby="colorHelp" />
+                        <small id="colorHelp" class="form-text text-muted col-9">
+                            色を選んでください。</small>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target141">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget141')" data-target="copyTarget141">
+                            <div class="text-info d-flex">
+                                <i id="clipicon141" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target141" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget141"
+                            class="line-numbers"><code id="sourceCode141" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑮スライダー -->
+        <div class="container mt-5 pbottom">
+            <div id="slider" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑮スライダー</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/forms/range/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのスライダーリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="form-group">
+                    <div class="d-flex align-items-center">
+                        <label for="rangeInput" class="col-2">値を選択:</label>
+                        <input type="range" class="form-range me-2" id="rangeInput" min="0" max="100" value="50"
+                            aria-describedby="rangeHelp" />
+                        <small id="rangeHelp" class="form-text text-muted col-6">0から100の間で値を選択できます。</small>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target151">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget151')" data-target="copyTarget151">
+                            <div class="text-info d-flex">
+                                <i id="clipicon151" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target151" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget151"
+                            class="line-numbers"><code id="sourceCode151" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑯日付選択 -->
+        <div class="container mt-5 pbottom">
+            <div id="date" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑯日付選択</h4>
+                <a href="https://getbootstrap.jp/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapの公式リンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="form-group">
+                    <div class="d-flex align-items-center">
+                        <label for="dateInput" class="col-2">日付を選択:</label>
+                        <input type="date" class="form-control me-2" id="dateInput" aria-describedby="dateHelp" />
+                        <small id="dateHelp" class="form-text text-muted col-6">日付を選んでください。</small>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target161">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget161')" data-target="copyTarget161">
+                            <div class="text-info d-flex">
+                                <i id="clipicon161" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target161" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget161"
+                            class="line-numbers"><code id="sourceCode161" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑰ページネーション -->
+        <div class="container mt-5 pbottom">
+            <div id="page" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑰ページネーション</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/pagination/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのページネーションリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target171">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget171')" data-target="copyTarget171">
+                            <div class="text-info d-flex">
+                                <i id="clipicon171" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target171" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget171"
+                            class="line-numbers"><code id="sourceCode171" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑱バッジ -->
+        <div class="container mt-5 pbottom">
+            <div id="badges" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑱バッジ</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/badge/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのバッジリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="badge text-bg-primary me-2">Primary</span>
+                    <span class="badge text-bg-secondary me-2">Secondary</span>
+                    <span class="badge text-bg-success me-2">Success</span>
+                    <span class="badge text-bg-danger me-2">Danger</span>
+                    <span class="badge text-bg-warning me-2">Warning</span>
+                    <span class="badge text-bg-info me-2">Info</span>
+                    <span class="badge text-bg-light me-2">Light</span>
+                    <span class="badge text-bg-dark me-2">Dark</span>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target181">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget181')" data-target="copyTarget181">
+                            <div class="text-info d-flex">
+                                <i id="clipicon181" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target181" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget181"
+                            class="line-numbers"><code id="sourceCode181" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="badge rounded-pill text-bg-primary me-2">Primary</span>
+                    <span class="badge rounded-pill text-bg-secondary me-2">Secondary</span>
+                    <span class="badge rounded-pill text-bg-success me-2">Success</span>
+                    <span class="badge rounded-pill text-bg-danger me-2">Danger</span>
+                    <span class="badge rounded-pill text-bg-warning me-2">Warning</span>
+                    <span class="badge rounded-pill text-bg-info me-2">Info</span>
+                    <span class="badge rounded-pill text-bg-light me-2">Light</span>
+                    <span class="badge rounded-pill text-bg-dark me-2">Dark</span>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target182">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget182')" data-target="copyTarget182">
+                            <div class="text-info d-flex">
+                                <i id="clipicon182" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target182" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget182"
+                            class="line-numbers"><code id="sourceCode182" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <button type="button" class="btn btn-primary mt-2 mb-2">
+                    ボタン <span class="badge text-bg-dark">カウンター</span>
+                </button>
+                <button type="button" class="btn btn-success position-relative">
+                    ボタン
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                        カウンター
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary position-relative ms-5">
+                    Profile
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                </button>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target183">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget183')" data-target="copyTarget183">
+                            <div class="text-info d-flex">
+                                <i id="clipicon183" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target183" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget183"
+                            class="line-numbers"><code id="sourceCode183" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="polaroid mt-3">
+                <h1>見出し <span class="badge bg-info">New</span></h1>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target184">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget184')" data-target="copyTarget184">
+                            <div class="text-info d-flex">
+                                <i id="clipicon184" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target184" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget184"
+                            class="line-numbers"><code id="sourceCode184" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ⑲プログレスバー -->
+        <div class="container mt-5 pbottom">
+            <div id="progress" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑲プログレスバー</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/progress/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapプログレスバーリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="row d-flex">
+                    <div class="col-1">①</div>
+                    <div class="col progress mb-2">
+                        <div class="progress-bar" style="width: 25%" role="progressbar" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">
+                            25%
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-1">②</div>
+                    <div class="col progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-1">③</div>
+                    <div class="col progress mb-2">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                            style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target191">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget191')" data-target="copyTarget191">
+                            <div class="text-info d-flex">
+                                <i id="clipicon191" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target191" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget191"
+                            class="line-numbers"><code id="sourceCode191" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑳スピナー -->
+        <div class="container mt-5 pbottom">
+            <div id="spinner" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">⑳スピナー</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/spinners/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapのスピナーリンク
+                </a>
+            </div>
+
+            <div class="polaroid mt-3">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target201">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget201')" data-target="copyTarget201">
+                            <div class="text-info d-flex">
+                                <i id="clipicon201" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target201" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget201"
+                            class="line-numbers"><code id="sourceCode201" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="polaroid mt-3">
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target202">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget202')" data-target="copyTarget202">
+                            <div class="text-info d-flex">
+                                <i id="clipicon202" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target202" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget202"
+                            class="line-numbers"><code id="sourceCode202" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row pbottom"></div>
+        </div>
+
+        <!-- ㉑イメージ -->
+        <div class="container mt-5 pbottom">
+            <div id="img" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">㉑イメージ</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/content/images/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> Bootstrapイメージのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex">
+                    <label class="col-1 me-1 text-end" for="exampleimg">ボーダー</label>
+                    <img src="img/garden.jpg" class="w-25 img-thumbnail" alt="flower" id="exampleimg" />
+                    <label class="col-1 text-end me-1" for="exampleimg2">角丸</label>
+                    <img src="img/forest.jpg" class="w-25 rounded" alt="forest" id="exampleimg2" />
+                    <label class="col-1 text-end me-1" for="exampleimg3">丸</label>
+                    <img src="img/penguins.jpg" class="w-25 rounded-circle" alt="penguin" id="exampleimg3" />
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target211">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget211')" data-target="copyTarget211">
+                            <div class="text-info d-flex">
+                                <i id="clipicon211" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target211" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget211"
+                            class="line-numbers"><code id="sourceCode211" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ㉒PopOver -->
+        <div class="container mt-5 pbottom">
+            <div id="popover" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">㉒PopOver</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/popovers" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> BootstrapPopOverのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex">
+                    <button type="button" class="btn btn-sm btn-warning me-5 ms-5" data-bs-placement="top"
+                        data-bs-toggle="popover" data-bs-title="Popoverのサンプル上"
+                        data-bs-content="ここにpopoverで表示する文字列を入れます。">上</button>
+                    <button type="button" class="btn btn-sm btn-success me-5 ms-5" data-bs-placement="bottom"
+                        data-bs-toggle="popover" data-bs-title="Popoverのサンプル下"
+                        data-bs-content="ここにpopoverで表示する文字列を入れます。">下</button>
+                    <button type="button" class="btn btn-sm btn-outline-warning me-5  ms-5" data-bs-toggle="popover"
+                        data-bs-placement="left" data-bs-title="Popoverのサンプル左"
+                        data-bs-content="ここにpopoverで表示する文字列を入れます。">左</button>
+                    <button type="button" class="btn btn-sm btn-outline-success ms-5" data-bs-toggle="popover"
+                        data-bs-placement="right" data-bs-title="Popoverのサンプル右"
+                        data-bs-content="ここにpopoverで表示する文字列を入れます。">右</button>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target221">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget221')" data-target="copyTarget221">
+                            <div class="text-info d-flex">
+                                <i id="clipicon221" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target221" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget221"
+                            class="line-numbers"><code id="sourceCode221" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ㉓Toasts -->
+        <div class="container mt-5 pbottom">
+            <div id="toasts" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">㉓Toasts</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/toasts/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> BootstrapToastsのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-danger m-4" id="sampleToast">トースト</button>
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                        <div id="showToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img src="./img/penguins.jpg" class="rounded me-2 w-25" alt="アイコン">
+                                <strong class="me-auto">ここはタイトル</strong>
+                                <small>5 mins ago</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                5秒後消えます
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="alwaysShowToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header text-bg-success">
+                            <img src="./img/garden.jpg" class="rounded me-2 w-25" alt="アイコン">
+                            <strong class="me-auto">トースト</strong>
+                            <small class="text-">常に表示</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            トーストです。表示方法を変えるにはJavaScriptが必要です。
+                        </div>
+                    </div>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target231">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget231')" data-target="copyTarget231">
+                            <div class="text-info d-flex">
+                                <i id="clipicon231" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target231" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget231"
+                            class="line-numbers"><code id="sourceCode231" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ㉔Tooltips -->
+        <div class="container mt-5 pbottom">
+            <div id="tooltips" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">㉔Tooltips</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/tooltips/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> BootstrapTooltipsのリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="d-flex">
+                    <p class="muted me-2 mt-2">リンクに<a href="#tooltips" data-bs-toggle="tooltip"
+                            data-bs-title="リンクの説明">Tooltips</a>
+                    </p>
+
+                    <button type="button" class="btn btn-success me-2 btn-sm" data-bs-toggle="tooltip"
+                        data-bs-placement="top" data-bs-title="上" data-bs-custom-class="primary-tooltip">
+                        上に表示
+                    </button>
+                    <button type="button" class="btn btn-dark me-2 btn-sm" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" data-bs-title="下" data-bs-custom-class="success-tooltip">
+                        下に表示
+                    </button>
+                    <button type="button" class="btn btn-outline-success me-2 btn-sm" data-bs-toggle="tooltip"
+                        data-bs-placement="left" data-bs-title="左" data-bs-custom-class="danger-tooltip">
+                        左に表示
+                    </button>
+                    <button type="button" class="btn btn-outline-dark me-2 btn-sm" data-bs-toggle="tooltip"
+                        data-bs-placement="right" data-bs-title="右" data-bs-custom-class="warning-tooltip">
+                        右に表示
+                    </button>
+                    <img src="img/forest.jpg" class="w-25 rounded" alt="forest" id="exampleimg2"
+                        data-bs-toggle="tooltip" data-bs-title="森" data-bs-custom-class="info-tooltip" />
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target241">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget241')" data-target="copyTarget241">
+                            <div class="text-info d-flex">
+                                <i id="clipicon241" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target241" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget241"
+                            class="line-numbers"><code id="sourceCode241" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ㉕Alert -->
+        <div class="container mt-5">
+            <div id="alert" class="ptop d-flex align-items-center">
+                <h4 class="me-5 mt-2">㉕Alert</h4>
+                <a href="https://getbootstrap.jp/docs/5.3/components/alerts/" class="link-primary fs-5 ms-auto">
+                    <i class="bi bi-star text-info"></i> BootstrapのAlertリンク
+                </a>
+            </div>
+            <div class="polaroid">
+                <div class="alert alert-primary d-flex justify-content-between" role="alert">
+                    プライマリー色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-secondary d-flex justify-content-between" role="alert">
+                    セカンダリー色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-success d-flex justify-content-between" role="alert">
+                    成功色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-danger d-flex justify-content-between" role="alert">
+                    危険色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-warning d-flex justify-content-between" role="alert">
+                    警告色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-info d-flex justify-content-between" role="alert">
+                    情報色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-light d-flex justify-content-between" role="alert">
+                    ライト色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-dark d-flex justify-content-between" role="alert">
+                    ダーク色Alert
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <hr class="dotted border-info" />
+
+                <div class="row">
+                    <!-- HTMLソース表示/非表示 -->
+                    <div class="col-4 mt-3">
+                        <button class="btn btn-outline-primary toggleTextButton" data-target="target251">
+                            <i id="foldericon" class="bi bi-folder"></i>
+                            HTMLを表示
+                        </button>
+                    </div>
+                    <div class="col-3 text-start p-0 m-0">
+                        <button class="btn" onclick="copyToClipboard('copyTarget251')" data-target="copyTarget251">
+                            <div class="text-info d-flex">
+                                <i id="clipicon251" class="bi bi-clipboard2-fill fs-1"></i>
+                                <div class="fs-6 mt-4">Clipboard</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div id="target251" style="display: none" class="form-control row border border-info mt-1">
+                    <div class="col mt-1">
+                        <pre id="copyTarget251"
+                            class="line-numbers"><code id="sourceCode251" class="language-html"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <hr />
+        <p class="text-primary ms-5">関東職業能力開発促進センター</p>
+    </footer>
+
+    <!-- Bootstrapで必要 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!-- Prism.jsのスクリプト -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <!-- 行番号を表示するプラグインのスクリプト -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <!-- Popoverを有効にするコード -->
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    </script>
+
+    <!-- 作成したJavaScriptは以下のファイル -->
+    <script src="./js/script.js" defer></script>
+</body>
+
+</html>

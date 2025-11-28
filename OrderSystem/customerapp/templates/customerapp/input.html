@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  得意先情報登録
+{% endblock %}
+
+{% block mtitle %}
+  得意先情報登録
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <form action="{% url 'customer_in' %}" method="post" class="col-md-8 col-lg-6">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">確認画面へ</button>
+          <a class="btn btn-secondary ms-3" href="{% url 'customer_menu' %}">メニューに戻る</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-striped table-bordered border-primary table-hover">
+    <thead>
+      <tr class="text-center">
+        <th>商品コード</th>
+        <th>商品名</th>
+        <th>分類</th>
+        <th>売上単価</th>
+        <th>仕入単価</th>
+        <th>在庫数</th>
+        <th>仕入先コード</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ data.goods_code }}</td>
+        <td>{{ data.goods_name }}</td>
+        <td>{{ data.classify }}</td>
+        <td>{{ data.sl_price }}</td>
+        <td>{{ data.cs_price }}</td>
+        <td>{{ data.stocks }}</td>
+        <td>{{ data.buy_code }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

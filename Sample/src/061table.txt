@@ -1,0 +1,32 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered border-primary table-hover">
+		<thead>
+			<tr>
+				<th>タイトル１</th>
+				<th>タイトル２</th>
+				<th>タイトル３</th>
+				<th>タイトル４</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td scope="row">項目１１</td>
+				<td>項目１２</td>
+				<td>項目１３</td>
+				<td>項目１４</td>
+			</tr>
+			<tr>
+				<td scope="row">項目２１</td>
+				<td>項目２２</td>
+				<td>項目２３</td>
+				<td>項目２４</td>
+			</tr>
+			<tr>
+				<td scope="row">項目３１</td>
+				<td>項目３２</td>
+				<td>項目３３</td>
+				<td>項目３４</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

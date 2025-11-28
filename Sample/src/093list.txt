@@ -1,0 +1,33 @@
+<div class="dropdown">
+	<div class="d-flex align-items-center">
+		<label for="exampleInputText" class="col-3">ドロップダウンリスト</label>
+		<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+			data-bs-toggle="dropdown" aria-expanded="false">
+			Menu
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+			<li><a class="dropdown-item" href="#">Menu#1</a></li>
+			<li><a class="dropdown-item" href="#">Menu#2</a></li>
+			<li>
+				<hr class="dropdown-divider" />
+			</li>
+			<li><a class="dropdown-item" href="#">Menu#3</a></li>
+		</ul>
+		<div class="btn-group">
+			<button type="button" class="btn btn-danger ms-2">Menu</button>
+			<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+			data-bs-toggle="dropdown" aria-expanded="false">
+				<span class="visually-hidden">トグル Dropdown</span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Menu1</a></li>
+				<li><a class="dropdown-item" href="#">Menu2</a></li>
+				<li><a class="dropdown-item" href="#">Menu3</a></li>
+				<li>
+					<hr class="dropdown-divider" />
+				</li>
+				<li><a class="dropdown-item" href="#">セパレートリンク</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

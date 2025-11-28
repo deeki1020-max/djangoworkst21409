@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block htitle %}
+  社員登録確認
+{% endblock %}
+{% block mtitle %}
+  社員登録確認画面
+{% endblock %}
+{% block contents %}
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="container mt-5">
+        <div class="display-6 text-info mb-2 text-center">以下の商品を登録します</div>
+        {% comment %}## TODO 実習７ ここにstafftable.htmlの内容を埋め込みます ##{% endcomment %}
+        {% include 'staffapp/stafftable.html' with data=request.session.istaff_data %}
+      </div>
+      <form method="post" action="{% url 'staff_ico' %}">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+          <input type="submit" class="btn btn-primary" value="確定" />
+          <a class="btn btn-secondary ms-3" href="{% url 'staff_in' %}">登録画面に戻る</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
